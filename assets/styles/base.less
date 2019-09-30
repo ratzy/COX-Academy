@@ -1,0 +1,383 @@
+body {
+    .normal-font-size;
+    .normal-font-weight;
+    font-family: @primaryFont;
+    background: @whiteColor;
+    overflow: hidden;
+}
+
+/*START: Variables and Classes*/
+@primaryColor: #9d00f8;
+@greyColor: #676767;
+@blackColor: #272727;
+@lightBlackColor: #585858;
+@whiteColor: #fff;
+@erorColor: #ff1c00;
+
+@primaryFont: 'Roboto', sans-serif;
+
+@paraLineHeight: 1.4;
+
+@border-radius: .25rem;
+@ctaBorderRadius: 30px;
+
+.thin-font-weight {
+    font-weight: 300;
+}
+
+.normal-font-weight {
+    font-weight: 400;
+}
+
+.medium-font-weight {
+    font-weight: 500;
+}
+
+.bold-font-weight {
+    font-weight: 700;
+}
+
+.black-font-weight {
+    font-weight: 900;
+}
+
+.small-font-size {
+    font-size: .85rem;
+}
+
+.small-font-size2 {
+    font-size: .75rem;
+}
+
+.normal-font-size {
+    font-size: 1rem;
+}
+
+.medium-font-size {
+    font-size: 1.25rem;
+}
+
+.medium-font-size2 {
+    font-size: 1.5rem;
+}
+
+.large-font-size {
+    font-size: 1.8rem;
+}
+
+.large-font-size2 {
+    font-size: 2rem;
+}
+
+.extra-large-font-size {
+    font-size: 3rem;
+}
+
+.full-vp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.rel-wrapper {
+    position: relative;
+}
+
+.vertical-align-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.flex-wrapper {
+    display: flex;
+    display: -ms-flex;
+}
+
+.block-element {
+    display: block;
+}
+
+.inline-element {
+    display: inline-block;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.transition {
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+}
+
+.para {
+    .normal-font-size;
+    .thin-font-weight;
+    color: @lightBlackColor;
+    line-height: @paraLineHeight;
+}
+
+.heading {
+    .medium-font-size;
+    color: @blackColor;
+}
+
+.pointed-cursor {
+    cursor: pointer;
+}
+
+
+/*END: Variables and Classes*/
+
+/*START: Defaut Syles*/
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+b {
+    .bold-font-weight;
+}
+
+.btn {
+    .transition;
+    .pointed-cursor;
+    .small-font-size;
+    text-transform: uppercase;
+    outline: none;
+    border: 1px solid @primaryColor;
+    background: lighten(@primaryColor, 15%);
+    color: @whiteColor;
+    padding: .8rem 1rem;
+    border-radius: @ctaBorderRadius;
+    letter-spacing: 0.1rem;
+
+    &:not(.text-btn):hover {
+        background: @primaryColor;
+    }
+
+    i {
+        .normal-font-size;
+        padding-left: .5rem;
+    }
+}
+
+.text-btn {
+    border: none;
+    background: transparent;
+    color: @greyColor;
+
+    &:hover {
+        color: @blackColor;
+    }
+}
+
+.bg-overlay {
+    .transition;
+    .full-vp;
+    background: rgba(0, 0, 0, .5);
+    opacity: 0;
+    z-index: -1;
+
+    &.show {
+        opacity: 1;
+        z-index: 99;
+    }
+}
+
+.header-action-wrapper {
+    .rel-wrapper;
+
+    .heading {
+        margin: 0;
+    }
+
+    i {
+        .transition;
+        .pointed-cursor;
+        .vertical-align-center;
+        padding: .8rem;
+        right: -.8rem;
+        color: @greyColor;
+
+        &:hover {
+            color: @blackColor;
+        }
+
+    }
+}
+
+/*END: Defaut Syles*/
+
+/*START: Form Group*/
+.form-group {
+    .block-element;
+    margin-bottom: 1rem;
+
+    .input-wrapper {
+        .rel-wrapper;
+
+        .form-input {
+            .normal-font-size;
+            background: @whiteColor;
+            color: @blackColor;
+            border-radius: @border-radius;
+            border: 1px solid #ddd;
+            width: 100%;
+            outline: none;
+            padding: .6rem 1rem;
+            box-sizing: border-box;
+        }
+
+        .place-holder {
+            .transition;
+            .small-font-size;
+            color: @blackColor;
+            background: @whiteColor;
+            position: absolute;
+            top: .6rem;
+            left: 1rem;
+            padding: .2rem .5rem;
+        }
+
+        .form-input:focus {
+            border-color: @primaryColor;
+
+            & + .place-holder {
+                color: @primaryColor;
+                top: -.6rem;
+                left: .6rem;
+                font-size: .8rem;
+            }
+        }
+    }
+
+    .error-msg {
+        .transition;
+        .block-element;
+        .small-font-size2;
+        margin-top: .3rem;
+        color: @erorColor;
+        transform: translateY(-.5rem);
+        -webkit-transform: translateY(-.5rem);
+        -moz-transform: translateY(-.5rem);
+        -ms-transform: translateY(-.5rem);
+        -o-transform: translateY(-.5rem);
+        opacity: 0;
+        z-index: -1;
+    }
+
+    &.error {
+        .error-msg {
+            transform: translateY(0);
+            -webkit-transform: translateY(0);
+            -moz-transform: translateY(0);
+            -ms-transform: translateY(0);
+            -o-transform: translateY(0);
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .input-wrapper .form-input {
+            border-color: @erorColor;
+        }
+    }
+}
+
+/*END: Form Group/
+
+
+
+
+/*START: Hero / Login Screen*/
+.hero-wrapper {
+    .hero-img {
+        .block-element;
+        .vertical-align-center;
+        left: 5rem;
+        width: 40%;
+    }
+
+    .btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .text-btn {
+        .small-font-size2;
+        margin-top: .5rem;
+    }
+}
+
+.hero-content-wrapper {
+    .vertical-align-center;
+    left: calc(~"40% + 12rem");
+    width: calc(~"50% - 12rem");
+
+    .site-logo {
+        .block-element;
+        width: 8rem;
+    }
+}
+
+.hero-form-wrapper {
+    margin-top: 1.5rem;
+
+    form {
+        .block-element;
+        margin-top: 2rem;
+    }
+}
+
+/*END: Hero / Login Screen*/
+
+/*START: Modal*/
+.modal {
+    .transition;
+    .vertical-align-center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
+    background: @whiteColor;
+    border-radius: @border-radius;
+    z-index: 0;
+    opacity: 0;
+    margin-top: -1rem;
+    box-shadow: 0 1rem 1rem -0.07rem transparent;
+
+    &.show {
+        margin-top: 0;
+        opacity: 1;
+        z-index: 100;
+        box-shadow: 0 1rem 1rem -0.07rem rgba(0, 0, 0, 0.25);
+    }
+
+    .modal-header,
+    .modal-body {
+        padding: .8rem 1.5rem 1rem;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .modal-body {
+        border: none;
+    }
+}
+
+/*END: Modal*/
+
+/*START: Import Other LESS File*/
+@import "responsive.less";
+/*END: Import Other LESS File*/
