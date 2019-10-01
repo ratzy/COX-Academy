@@ -4,7 +4,7 @@
         <img src="assets/images/site-logo.png" alt="Cox-Academy" class="site-logo" />
         <div class="hero-form-wrapper">
             <!--NOTE: Small description comes here-->
-            <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id lorem congue.</p>
+            <p class="para">Test your unique skill set and earn badges. Test your set and earn badges.</p>
             <!--START: Login Form-->
             <form>
                 <div class="form-group">
@@ -23,9 +23,9 @@
                 </div>
             </form>
             <!--END: Login Form-->
-            <button type="button" class="btn primary-btn">Submit <i class="fa fa-angle-right"></i></button>
+            <button type="button" class="btn primary-btn login-btn">Submit <i class="fa fa-angle-right"></i></button>
         </div>
-        <button type="button" class="btn text-btn" onclick="showModal('.know-more-modal')">Know More</button>
+        <button type="button" class="btn text-btn know-more" onclick="showModal('.know-more-modal')">Know More</button>
     </div>
 </div>
 
@@ -39,6 +39,23 @@
     </div>
     <div class="modal-body">
         <p class="para">Fusce fringilla ipsum eu elementum auctor. Proin condimentum sodales tempus. Donec volutpat, libero pretium mollis molestie, sapien ante dapibus augue, vitae eleifend tortor sapien vitae risus. Donec faucibus egestas mauris, fermentum tincidunt sem posuere vel. Curabitur sed semper quam, eget bibendum magna. Sed ultricies placerat nunc, vehicula imperdiet leo. Phasellus eget ipsum et nibh condimentum feugiat. Pellentesque at molestie augue.</p>
+    </div>
+    <div class="modal-footer">
+        <ul class="badge-list">
+            <li class="badge-item">
+                <img src="assets/images/beginner-badge.png" alt="Beginner Badge" />
+                <span>Beginner</span>
+            </li>
+            <li class="badge-item">
+                <img src="assets/images/advance-badge.png" alt="Advance Badge" />
+                <span>Advance</span>
+            </li>
+            <li class="badge-item">
+                <img src="assets/images/expert-badge.png" alt="Expert Badge" />
+                <span>Expert</span>
+            </li>
+        </ul>
+
     </div>
 
 </div>

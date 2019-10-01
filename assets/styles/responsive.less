@@ -32,6 +32,18 @@
     .para {
         .small-font-size;
     }
+
+    .modal {
+        width: 65%;
+        max-height: 70vh;
+        overflow: hidden;
+
+        .modal-body {
+            max-height: calc(~"65vh - 2rem");
+            overflow: hidden;
+            overflow-y: auto;
+        }
+    }
 }
 
 /*END: Common till Tablet*/
@@ -39,12 +51,29 @@
 /*START: Mobile*/
 @media screen and (max-width: 767px) {
     .hero-wrapper .hero-img {
-        margin: 8vh auto 5vh;
-        width: 65%;
+        margin: 5vh auto 3vh;
+        width: 55%;
     }
 
     .hero-content-wrapper {
         width: 80%;
+    }
+
+    .modal {
+        width: 90%;
+        max-height: 80vh;
+
+        .modal-body {
+            max-height: calc(~"75vh - 2rem");
+        }
+    }
+
+    .btn {
+        .small-font-size;
+    }
+
+    .hero-content-wrapper .btn.know-more {
+        font-size: .65rem;
     }
 }
 

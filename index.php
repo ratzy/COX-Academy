@@ -13,6 +13,10 @@
     <?php include 'components/login.php';?>
     <!--END: Hero / Login Screen-->
 
+    <!--START: Dashboard-->
+    <?php include 'components/test-selection.php';?>
+    <!--END: Dashboard-->
+
     <!--START: Footer-->
     <?php include 'components/footer.php';?>
     <!--END: Footer-->
