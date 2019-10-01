@@ -1,0 +1,3 @@
+1.media-query for modal for small screen
+2. during Modal is active, background is clickable
+3. Modal is overlapping input fields
