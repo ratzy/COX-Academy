@@ -17,6 +17,10 @@
     <?php include 'components/test-selection.php';?>
     <!--END: Dashboard-->
 
+    <!--START: Test-->
+    <?php include 'components/test.php';?>
+    <!--END: Test-->
+
     <!--START: Footer-->
     <?php include 'components/footer.php';?>
     <!--END: Footer-->

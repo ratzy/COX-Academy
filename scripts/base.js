@@ -4,6 +4,7 @@
      showUserActivity();
      logIn();
      logOut();
+     selectTech();
  });
 
  /*START: Input*/
@@ -111,6 +112,7 @@
                  loginRequestArr.push(inputVal); //Pushing to the array
              } else {
                  ele.addClass('error');
+                 formEmpty = true;
              }
          });
 
@@ -157,3 +159,63 @@
      })
  }
  /*END: Clear Form*/
+
+ /*START: Selct Technology*/
+ /*NOTE: Only to select technology and on select of one technology footer will appear*/
+ function selectTech() {
+     var ele;
+     $(document).on('click', '.test-selection-body .technology-item', function () {
+         ele = $(this);
+         $('.test-selection-body .technology-item').removeClass('selected');
+         ele.addClass('selected');
+         $('.test-selection-footer').addClass('show');
+         startTest(); //Calling start test
+     });
+ }
+ /*END: Selct Technology*/
+
+ /*STRAT: Start Test*/
+ function startTest() {
+     var ele, selectTech;
+     $(document).on('click', '.test-selection-footer .start-test-btn', function () {
+         ele = $(this);
+         selectTech = ele.closest('.test-selection-wrapper').find('.technology-item.selected span').text();
+         $('.test-selection-wrapper').removeClass('show');
+         $('.test-screen').addClass('show');
+         chooseAnswer(); //Calling Choose Answer
+         /*NOTE: Fetch technology releated question answer here with selctTech variable*/
+     });
+ }
+ /*END: Start Test*/
+
+ /*START: Choose Answer form Options*/
+ function chooseAnswer() {
+     var ele;
+     $(document).on('click', '.option-item', function () {
+         ele = $(this);
+
+         //Select All
+         if (ele.attr('attr') == "sa") {
+             ele.closest('.option-list').find('.option-item').each(function () {
+                 $(this).addClass('selected');
+             })
+         } else if (ele.attr('attr') == "al") { //Above All
+             ele.closest('.option-list').find('.option-item:not(:last-child)').each(function () {
+                 $(this).addClass('selected');
+             });
+         } else if (ele.attr('attr') == "na") { //None of All
+             ele.closest('.option-list').find('.option-item').each(function () {
+                 $(this).removeClass('selected');
+             });
+             ele.toggleClass('selected');
+
+         } else { //Custom
+             ele.toggleClass('selected');
+             if ($('.option-list').find('.option-item:last-child').hasClass('na')) {
+                 $('.option-list').find('.option-item:last-chil').removeClass('selected');
+             }
+         }
+
+     });
+ }
+ /*END: Choose Answer form Options*/

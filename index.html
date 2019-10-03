@@ -1,7 +1,7 @@
+
 <!DOCTYPE html>
 <html>
 <!--START: Head-->
-
 <head>
     <title>COX-Academy | Accenture</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -23,69 +23,285 @@
     <!--END: Work Based Fonts-->
 
     <link rel="stylesheet" href="assets/styles/reset.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/styles/base.css" />
+    <link rel="stylesheet/less" type="text/css" href="assets/styles/base.less" />
+    <script type="text/javascript" src="scripts/vendor/less.min.js"></script>
 
 </head>
 <!--END: Head-->
 
 <body>
     <!--START: Header-->
+    <header>
+    <img src="assets/images/site-logo.png" alt="COX-Academy" class="site-logo" />
+    <div class="user-profile-wrapper rel-wrapper">
+        <div class="user-info">
+            <h3 class="user-name">Kamal</h3>
+            <img src="assets/images/avatar-m.png" alt="User" class="user-img" />
+            <i class="fa fa-angle-down"></i>
+        </div>
+        <ul class="user-profile-activity">
+            <li class="user-profile-item">Activity</li>
+            <li class="user-profile-item log-out-btn">Log Out</li>
+        </ul>
+    </div>
+</header>
     <!--END: Header-->
 
     <!--START: Hero / Login Screen-->
     <div class="full-vp hero-wrapper">
-        <img src="assets/images/hero-image.svg" alt="Hero Image" class="hero-img" />
-        <div class="hero-content-wrapper">
-            <img src="assets/images/site-logo.png" alt="Cox-Academy" class="site-logo" />
-            <div class="hero-form-wrapper">
-                <!--NOTE: Small description comes here-->
-                <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id lorem congue.</p>
-                <!--START: Login Form-->
-                <form>
-                    <div class="form-group">
-                        <div class="input-wrapper">
-                            <input type="mail" class="form-input">
-                            <span class="place-holder">Email Address</span>
-                        </div>
-                        <span class="error-msg">Please enter your valid mail id</span>
+    <img src="assets/images/hero-image.svg" alt="Hero Image" class="hero-img" />
+    <div class="hero-content-wrapper">
+        <img src="assets/images/site-logo.png" alt="Cox-Academy" class="site-logo" />
+        <div class="hero-form-wrapper">
+            <!--NOTE: Small description comes here-->
+            <p class="para">Test your unique skill set and earn badges. Test your set and earn badges.</p>
+            <!--START: Login Form-->
+            <form>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="mail" class="form-input">
+                        <span class="place-holder">Email Address</span>
                     </div>
-                    <div class="form-group">
-                        <div class="input-wrapper">
-                            <input type="password" class="form-input">
-                            <span class="place-holder">Password</span>
-                        </div>
-                        <span class="error-msg">Please enter your correct password</span>
+                    <span class="error-msg">Please enter your valid mail id</span>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="password" class="form-input">
+                        <span class="place-holder">Password</span>
                     </div>
-                </form>
-                <!--END: Login Form-->
-                <button type="button" class="btn primary-btn">Submit <i class="fa fa-angle-right"></i></button>
-            </div>
-            <button type="button" class="btn text-btn" onclick="showModal('.know-more-modal')">Know More</button>
+                    <span class="error-msg">Please enter your correct password</span>
+                </div>
+            </form>
+            <!--END: Login Form-->
+            <button type="button" class="btn primary-btn login-btn">Submit <i class="fa fa-angle-right"></i></button>
+        </div>
+        <button type="button" class="btn text-btn know-more" onclick="showModal('.know-more-modal')">Know More</button>
+    </div>
+</div>
+
+<!--START: Know More Modal-->
+<div class="modal know-more-modal">
+    <div class="modal-header">
+        <div class="header-action-wrapper">
+            <h3 class="heading">COX-Academy</h3>
+            <i class="fa fa-times" onclick="hideModal();"></i>
         </div>
     </div>
-
-    <!--START: Know More Modal-->
-    <div class="modal know-more-modal">
-        <div class="modal-header">
-            <div class="header-action-wrapper">
-                <h3 class="heading">COX-Academy</h3>
-                <i class="fa fa-times" onclick="hideModal();"></i>
-            </div>
-        </div>
-        <div class="modal-body">
-            <p class="para">Fusce fringilla ipsum eu elementum auctor. Proin condimentum sodales tempus. Donec volutpat, libero pretium mollis molestie, sapien ante dapibus augue, vitae eleifend tortor sapien vitae risus. Donec faucibus egestas mauris, fermentum tincidunt sem posuere vel. Curabitur sed semper quam, eget bibendum magna. Sed ultricies placerat nunc, vehicula imperdiet leo. Phasellus eget ipsum et nibh condimentum feugiat. Pellentesque at molestie augue.</p>
-        </div>
+    <div class="modal-body">
+        <p class="para">Fusce fringilla ipsum eu elementum auctor. Proin condimentum sodales tempus. Donec volutpat, libero pretium mollis molestie, sapien ante dapibus augue, vitae eleifend tortor sapien vitae risus. Donec faucibus egestas mauris, fermentum tincidunt sem posuere vel. Curabitur sed semper quam, eget bibendum magna. Sed ultricies placerat nunc, vehicula imperdiet leo. Phasellus eget ipsum et nibh condimentum feugiat. Pellentesque at molestie augue.</p>
+    </div>
+    <div class="modal-footer">
+        <ul class="badge-list">
+            <li class="badge-item">
+                <img src="assets/images/beginner-badge.png" alt="Beginner Badge" />
+                <span>Beginner</span>
+            </li>
+            <li class="badge-item">
+                <img src="assets/images/advance-badge.png" alt="Advance Badge" />
+                <span>Advance</span>
+            </li>
+            <li class="badge-item">
+                <img src="assets/images/expert-badge.png" alt="Expert Badge" />
+                <span>Expert</span>
+            </li>
+        </ul>
 
     </div>
-    <!--END: Know More Modal-->
+
+</div>
+<!--END: Know More Modal-->
     <!--END: Hero / Login Screen-->
+
+    <!--START: Dashboard-->
+    <div class="test-selection-wrapper">
+    <img src="assets/images/dashboard-hero-img.svg" alt="Hero" class="hero-img" />
+    <div class="test-selection-content">
+        <div class="test-selection-header">
+            <p class="para">Selct your skill form the below listing technologies and unlock the oppertunities.</p>
+        </div>
+        <div class="test-selection-body">
+            <h3 class="heading">Frontend Technology</h3>
+            <ul class="technology-list">
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>html55</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>CSS3</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>JavaScript</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>Angular</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>React</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>Dojo</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>CSS3</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>JavaScript</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>Angular</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>React</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>Dojo</span>
+                </li>
+            </ul>
+            <h3 class="heading">Backend Technology</h3>
+            <ul class="technology-list">
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>Java</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>.NET</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>Php</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>Java</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>.NET</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>Php</span>
+                </li>
+            </ul>
+            <h3 class="heading">Storage Technology</h3>
+            <ul class="technology-list">
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>Sql/PL Sql</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>Informatica</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>Oracle</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>Sql/PL Sql</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>Informatica</span>
+                </li>
+                <li class="technology-item">
+                    <img src="assets/images/html5.png" alt="html55">
+                    <span>Oracle</span>
+                </li>
+            </ul>
+        </div>
+        <div class="test-selection-footer">
+            <em>Ready to take up the challenge?</em>
+            <button class="btn primary-btn start-test-btn">Submit<i class="fa fa-angle-right"></i></button>
+        </div>
+    </div>
+</div>
+    <!--END: Dashboard-->
+
+    <!--START: Test-->
+    <div class="test-screen">
+    <div class="test-screen-body">
+        <div class="question-progess-indicator">
+            <span class="current-question">1</span>
+            <span class="totl-question">9</span>
+        </div>
+        <div class="question-wrapper">
+            <em class="question-number">01</em>
+            <h3 class="question">The following DOCTYPE are also supported in HTML5.</h3>
+        </div>
+        <div class="option-wrapper">
+            <em>Choose Answer</em>
+            <ul class="option-list">
+                <li class="option-item">
+                    <pre><xmp>!DOCTYPE html</xmp></pre>
+                </li>
+                <li class="option-item">
+                    <pre><xmp><!dOCtype html></xmp></pre>
+                </li>
+                <li class="option-item">
+                    <pre><xmp><!doctype html></xmp></pre>
+                </li>
+                <li class="option-item" attr="na">
+                    <pre><xmp>Above All</xmp></pre>
+                </li>
+            </ul>
+        </div>
+        <div class="action-wrapper">
+            <button class="btn secondary-btn disabled">Previous</button>
+            <button class="btn secondary-btn disabled">Next</button>
+            <button class="btn primary-btn submit-btn">
+                Submit<i class="fa fa-angle-right"></i></button>
+
+        </div>
+    </div>
+    <div class="test-screen-footer">
+        <em>Earned badges</em>
+        <ul class="badge-list">
+            <li class="badge-item">
+                <img src="assets/images/beginner-badge.png" alt="Beginner Badge" />
+                <span>Beginner</span>
+            </li>
+            <li class="badge-item">
+                <img src="assets/images/advance-badge.png" alt="Advance Badge" />
+                <span>Advance</span>
+            </li>
+            <li class="badge-item">
+                <img src="assets/images/expert-badge.png" alt="Expert Badge" />
+                <span>Expert</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+    <!--END: Test-->
 
     <!--START: Footer-->
     <div class="bg-overlay"></div>
-    <footer>
-        <script type="text/javascript" src="scripts/vendor/jquery-1.10.2.min.js"></script>
-        <script type="text/javascript" src="scripts/base.js"></script>
-    </footer>
+<!--START: Loader-->
+<div class="loader-wrapper">
+    <div class="rel-wrapper">
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+    </div>
+</div>
+<!--END: Loader-->
+<footer>
+    <script type="text/javascript" src="scripts/vendor/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="scripts/base.js"></script>
+</footer>
     <!--END: Footer-->
 
 
