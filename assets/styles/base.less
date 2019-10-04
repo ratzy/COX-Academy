@@ -100,6 +100,10 @@ body {
     display: -ms-flex;
 }
 
+.flex-center {
+    align-items: center;
+}
+
 .block-element {
     display: block;
 }
@@ -690,8 +694,18 @@ header {
 
     .question-progess-indicator {
         position: absolute;
-        top: 0;
+        top: 1rem;
         right: 2rem;
+
+        .current-question {
+            .large-font-size;
+            color: @blackColor;
+        }
+
+        .totl-question {
+            .medium-font-size;
+            color: @greyColor;
+        }
     }
 
     .question-wrapper {
@@ -775,7 +789,6 @@ header {
 }
 
 .test-screen-footer {
-    .flex-wrapper;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -785,6 +798,46 @@ header {
     border-top: 1px solid #eaeaea;
     background: #efefef;
     align-items: center;
+
+    .progress-list {
+        .flex-wrapper;
+        margin: 0;
+        transform: translate(-1.6rem, -2.1rem);
+        -webkit-transform: translate(-1.6rem, -2.1rem);
+        -moz-transform: translate(-1.6rem, -2.1rem);
+        -ms-transform: translate(-1.6rem, -2.1rem);
+        -o-transform: translate(-1.6rem, -2.1rem);
+        width: calc(~"100% + 3.2rem");
+
+        .progress-item {
+            .rel-wrapper;
+            font-size: .65rem;
+            width: 33.33%;
+            text-align: center;
+            background: #ababab;
+            color: @whiteColor;
+            letter-spacing: 0.15rem;
+            padding: .2rem 0;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background: #6266f7;
+            }
+
+            &:nth-child(2)::before {
+                background: #4d53f1;
+            }
+
+            &:last-child::before {
+                background: #313aff;
+            }
+        }
+
+    }
 
     .badge-item {
         .transition;

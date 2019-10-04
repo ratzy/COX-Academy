@@ -5,6 +5,7 @@
             <p class="para">Selct your skill form the below listing technologies and unlock the oppertunities.</p>
         </div>
         <div class="test-selection-body">
+<!--
             <h3 class="heading">Frontend Technology</h3>
             <ul class="technology-list">
                 <li class="technology-item">
@@ -106,6 +107,7 @@
                     <span>Oracle</span>
                 </li>
             </ul>
+-->
         </div>
         <div class="test-selection-footer">
             <em>Ready to take up the challenge?</em>

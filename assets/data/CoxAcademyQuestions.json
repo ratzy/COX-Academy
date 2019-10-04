@@ -5,7 +5,7 @@
       "errorDetails": null
     },
     "questionSet": {
-      "frontendTechnology": {
+      "Frontend Technology": {
         "html5": [
           {
             "questionId": 1234,
@@ -775,7 +775,7 @@
           }
         ]
       },
-      "backendTechnology": {
+      "Backend Technology": {
         "Java": [
           {
             "questionId": 1234,
@@ -1353,7 +1353,7 @@
           }
         ]
       },
-      "storageTechnology": {
+      "Storage Technology": {
         "Sql_PLSql": [
           {
             "questionId": 1234,

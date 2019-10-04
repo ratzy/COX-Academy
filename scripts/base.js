@@ -10,14 +10,8 @@ $(document).ready(() => {
 /*START: Input*/
 function inputFunction() {
     var ele, inputVal;
-    /*Note: To remove error message from input*/
-    // $(document).on('click', '.form-input', function () {
-    //     ele = $(this);
-    //     ele.closest('.form-group').removeClass('error');
-    // });
-
     /*Note: To check the input value null or not | UI logic*/
-    $(document).on('focusout change input', '.form-input', function () {//'focusout focusin click keyup'
+    $(document).on('focusout change input', '.form-input', function () { //'focusout focusin click keyup'
         ele = $(this);
         inputVal = ele.val();
         if (inputVal.length) {
@@ -70,8 +64,8 @@ function showHero() {
 function showDashboard() {
     $('header').addClass('show');
     $('.test-selection-wrapper').addClass('show');
-    $('.test-selection-body .technology-item').removeClass('selected');// Resetting previous selection
-    $('.test-selection-footer').removeClass('show');// Hiding footer option
+    $('.test-selection-body .technology-item').removeClass('selected'); // Resetting previous selection
+    $('.test-selection-footer').removeClass('show'); // Hiding footer option
 }
 /*END: Showing Dashboard*/
 
@@ -148,37 +142,59 @@ function getQuestionSet() {
                 // Below code is for teasting purpose.
                 var encryptedResponse = encrypt(returnData);
                 var decryptedResponse = decrypt(encryptedResponse);
-            } else { }
-        }, function (jqXHR, textStatus, errorThrown) {
+                //Popuate Technology Dashoard
+                populateTechDashBoard(returnData);
+            } else {}
+        },
+        function (jqXHR, textStatus, errorThrown) {
             hideLoader();
         }
     );
 }
 /*END: Fetch QuestionSet*/
 
+/*START: populate Technology Dashboard*/
+function populateTechDashBoard(returnData) {
+    var catagory = Object.keys(returnData.CoxAcademyQuestions.questionSet);
+    var techListHTML = '<ul class="technology-list"></ul>';
+    catagory.map((item) => {
+        //Print grounp
+        console.log(item);
+        $('.test-selection-body').append('<h3 class="heading">' + item + '</h3>');
+        //tech group
+        var techList = Object.keys(returnData.CoxAcademyQuestions.questionSet[item]);
+        console.log(techList);
+        $('.test-selection-body').append(techListHTML);
+        techList.map((item) => {
+            $('.technology-list:last-child').append('<li class="technology-item">' + item + '</li>');
+        });
+    });
+
+}
+/*END: populate Technology Dashboard*/
+
+
 /*START:  Manage Encryption*/
 function encrypt(data) {
     var secret = 'cox-academy';
-    return CryptoJS.AES.encrypt(JSON.stringify(data), secret,
-        {
-            keySize: 128 / 8,
-            iv: secret,
-            mode: CryptoJS.mode.CBC,
-            padding: CryptoJS.pad.Pkcs7
-        }).toString();
+    return CryptoJS.AES.encrypt(JSON.stringify(data), secret, {
+        keySize: 128 / 8,
+        iv: secret,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7
+    }).toString();
 }
 /*END: Manage Encryption*/
 
 /*START:  Manage Decryption*/
 function decrypt(data) {
     var secret = 'cox-academy';
-    return JSON.parse(CryptoJS.enc.Utf8.stringify(CryptoJS.AES.decrypt(data, secret,
-        {
-            keySize: 128 / 8,
-            iv: secret,
-            mode: CryptoJS.mode.CBC,
-            padding: CryptoJS.pad.Pkcs7
-        })));
+    return JSON.parse(CryptoJS.enc.Utf8.stringify(CryptoJS.AES.decrypt(data, secret, {
+        keySize: 128 / 8,
+        iv: secret,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7
+    })));
 }
 /*END: Manage Decryption*/
 
@@ -269,4 +285,4 @@ function chooseAnswer() {
 
     });
 }
- /*END: Choose Answer form Options*/
+/*END: Choose Answer form Options*/
