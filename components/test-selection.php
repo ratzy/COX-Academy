@@ -8,101 +8,101 @@
             <h3 class="heading">Frontend Technology</h3>
             <ul class="technology-list">
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
-                    <span>html55</span>
+                    <img src="assets/images/html5.png" alt="html5">
+                    <span>html5</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>CSS3</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>JavaScript</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>Angular</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>React</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>Dojo</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>CSS3</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>JavaScript</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>Angular</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>React</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>Dojo</span>
                 </li>
             </ul>
             <h3 class="heading">Backend Technology</h3>
             <ul class="technology-list">
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>Java</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>.NET</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>Php</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>Java</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>.NET</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>Php</span>
                 </li>
             </ul>
             <h3 class="heading">Storage Technology</h3>
             <ul class="technology-list">
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>Sql/PL Sql</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>Informatica</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>Oracle</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>Sql/PL Sql</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>Informatica</span>
                 </li>
                 <li class="technology-item">
-                    <img src="assets/images/html5.png" alt="html55">
+                    <img src="assets/images/html5.png" alt="html5">
                     <span>Oracle</span>
                 </li>
             </ul>

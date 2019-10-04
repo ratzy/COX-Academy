@@ -1,0 +1,1936 @@
+{
+  "CoxAcademyQuestions": {
+    "responseHeader": {
+      "successFlag": "true",
+      "errorDetails": null
+    },
+    "questionSet": {
+      "frontendTechnology": {
+        "html5": [
+          {
+            "questionId": 1234,
+            "question": "Is HTML5 backward compatible with old browsers?",
+            "options": [
+              "true",
+              "false"
+            ],
+            "answers": [
+              "true"
+            ],
+            "answerDetails": "Explanation\n Yes! HTML5 is designed, as much as possible, to be backward compatible with existing web browsers.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 2345,
+            "question": "Which of the following tag represents the footer of a section in HTML5?",
+            "options": [
+              "footer",
+              "section",
+              "nav",
+              "dialog"
+            ],
+            "answers": [
+              "footer"
+            ],
+            "answerDetails": "Explanation\n 'footer' tag represents the footer of a section.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 3456,
+            "question": "Which of the following input control accepts only numerical value in Web Form 2.0?",
+            "options": [
+              "week",
+              "time",
+              "number",
+              "range"
+            ],
+            "answers": [
+              "number"
+            ],
+            "answerDetails": "Explanation\n 'number' input control accepts only numerical value. The step attribute specifies the precision, defaulting to 1.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 4567,
+            "question": "Which of the following tag insists to have a value in an input control in HTML5?",
+            "options": [
+              "output",
+              "placeholder",
+              "autofocus",
+              "required"
+            ],
+            "answers": [
+              "required"
+            ],
+            "answerDetails": "Explanation\n HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 5678,
+            "question": "When a session storage data gets deleted in HTML5?",
+            "options": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+              "If you want to clear all settings, you need to call localStorage.clear() method.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated."
+            ],
+            "answerDetails": "Explanation\n The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 6789,
+            "question": "Which of the following is true about 'canvas' tag in HTML5?",
+            "options": [
+              "HTML5 element <canvas> gives you an easy and powerful way to draw graphics using JavaScript.",
+              "It can be used to draw graphs, make photo compositions or do simple (and not so simple) animations.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "Above All"
+            ],
+            "answerDetails": "Explanation\n Both of the above options are correct.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 7891,
+            "question": "Which of the following attribute specifies if the element must have it's spelling or grammar checked?",
+            "options": [
+              "item",
+              "itemcheck",
+              "spellcheck",
+              "itemgroup"
+            ],
+            "answers": [
+              "spellcheck"
+            ],
+            "answerDetails": "Explanation\n spellcheck − Specifies if the element must have it's spelling or grammar checked.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 8912,
+            "question": "Which of the following attribute triggers event when a context menu is triggered?",
+            "options": [
+              "oncontextmenu",
+              "ondrag",
+              "ondragend",
+              "ondragenter"
+            ],
+            "answers": [
+              "oncontextmenu"
+            ],
+            "answerDetails": "Explanation\n oncontextmenu − Triggers event when a context menu is triggered.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 9123,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9124,
+            "question": "Which of the following attribute triggers event when the duration and other media data of a media element is loaded?",
+            "options": [
+              "onloadedmetadata",
+              "onloadstart",
+              "onmessage",
+              "onoffline"
+            ],
+            "answers": [
+              "onloadedmetadata"
+            ],
+            "answerDetails": "Explanation\n onloadedmetadata − Triggers event when the duration and other media data of a media element is loaded.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9125,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9126,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          }
+        ],
+        "css3": [
+          {
+            "questionId": 1234,
+            "question": "Is HTML5 backward compatible with old browsers?",
+            "options": [
+              "true",
+              "false"
+            ],
+            "answers": [
+              "true"
+            ],
+            "answerDetails": "Explanation\n Yes! HTML5 is designed, as much as possible, to be backward compatible with existing web browsers.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 2345,
+            "question": "Which of the following tag represents the footer of a section in HTML5?",
+            "options": [
+              "footer",
+              "section",
+              "nav",
+              "dialog"
+            ],
+            "answers": [
+              "footer"
+            ],
+            "answerDetails": "Explanation\n 'footer' tag represents the footer of a section.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 3456,
+            "question": "Which of the following input control accepts only numerical value in Web Form 2.0?",
+            "options": [
+              "week",
+              "time",
+              "number",
+              "range"
+            ],
+            "answers": [
+              "number"
+            ],
+            "answerDetails": "Explanation\n 'number' input control accepts only numerical value. The step attribute specifies the precision, defaulting to 1.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 4567,
+            "question": "Which of the following tag insists to have a value in an input control in HTML5?",
+            "options": [
+              "output",
+              "placeholder",
+              "autofocus",
+              "required"
+            ],
+            "answers": [
+              "required"
+            ],
+            "answerDetails": "Explanation\n HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 5678,
+            "question": "When a session storage data gets deleted in HTML5?",
+            "options": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+              "If you want to clear all settings, you need to call localStorage.clear() method.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated."
+            ],
+            "answerDetails": "Explanation\n The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 6789,
+            "question": "Which of the following is true about 'canvas' tag in HTML5?",
+            "options": [
+              "HTML5 element <canvas> gives you an easy and powerful way to draw graphics using JavaScript.",
+              "It can be used to draw graphs, make photo compositions or do simple (and not so simple) animations.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "Above All"
+            ],
+            "answerDetails": "Explanation\n Both of the above options are correct.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 7891,
+            "question": "Which of the following attribute specifies if the element must have it's spelling or grammar checked?",
+            "options": [
+              "item",
+              "itemcheck",
+              "spellcheck",
+              "itemgroup"
+            ],
+            "answers": [
+              "spellcheck"
+            ],
+            "answerDetails": "Explanation\n spellcheck − Specifies if the element must have it's spelling or grammar checked.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 8912,
+            "question": "Which of the following attribute triggers event when a context menu is triggered?",
+            "options": [
+              "oncontextmenu",
+              "ondrag",
+              "ondragend",
+              "ondragenter"
+            ],
+            "answers": [
+              "oncontextmenu"
+            ],
+            "answerDetails": "Explanation\n oncontextmenu − Triggers event when a context menu is triggered.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 9123,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9124,
+            "question": "Which of the following attribute triggers event when the duration and other media data of a media element is loaded?",
+            "options": [
+              "onloadedmetadata",
+              "onloadstart",
+              "onmessage",
+              "onoffline"
+            ],
+            "answers": [
+              "onloadedmetadata"
+            ],
+            "answerDetails": "Explanation\n onloadedmetadata − Triggers event when the duration and other media data of a media element is loaded.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9125,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9126,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          }
+        ],
+        "JavaScript": [
+          {
+            "questionId": 1234,
+            "question": "Is HTML5 backward compatible with old browsers?",
+            "options": [
+              "true",
+              "false"
+            ],
+            "answers": [
+              "true"
+            ],
+            "answerDetails": "Explanation\n Yes! HTML5 is designed, as much as possible, to be backward compatible with existing web browsers.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 2345,
+            "question": "Which of the following tag represents the footer of a section in HTML5?",
+            "options": [
+              "footer",
+              "section",
+              "nav",
+              "dialog"
+            ],
+            "answers": [
+              "footer"
+            ],
+            "answerDetails": "Explanation\n 'footer' tag represents the footer of a section.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 3456,
+            "question": "Which of the following input control accepts only numerical value in Web Form 2.0?",
+            "options": [
+              "week",
+              "time",
+              "number",
+              "range"
+            ],
+            "answers": [
+              "number"
+            ],
+            "answerDetails": "Explanation\n 'number' input control accepts only numerical value. The step attribute specifies the precision, defaulting to 1.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 4567,
+            "question": "Which of the following tag insists to have a value in an input control in HTML5?",
+            "options": [
+              "output",
+              "placeholder",
+              "autofocus",
+              "required"
+            ],
+            "answers": [
+              "required"
+            ],
+            "answerDetails": "Explanation\n HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 5678,
+            "question": "When a session storage data gets deleted in HTML5?",
+            "options": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+              "If you want to clear all settings, you need to call localStorage.clear() method.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated."
+            ],
+            "answerDetails": "Explanation\n The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 6789,
+            "question": "Which of the following is true about 'canvas' tag in HTML5?",
+            "options": [
+              "HTML5 element <canvas> gives you an easy and powerful way to draw graphics using JavaScript.",
+              "It can be used to draw graphs, make photo compositions or do simple (and not so simple) animations.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "Above All"
+            ],
+            "answerDetails": "Explanation\n Both of the above options are correct.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 7891,
+            "question": "Which of the following attribute specifies if the element must have it's spelling or grammar checked?",
+            "options": [
+              "item",
+              "itemcheck",
+              "spellcheck",
+              "itemgroup"
+            ],
+            "answers": [
+              "spellcheck"
+            ],
+            "answerDetails": "Explanation\n spellcheck − Specifies if the element must have it's spelling or grammar checked.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 8912,
+            "question": "Which of the following attribute triggers event when a context menu is triggered?",
+            "options": [
+              "oncontextmenu",
+              "ondrag",
+              "ondragend",
+              "ondragenter"
+            ],
+            "answers": [
+              "oncontextmenu"
+            ],
+            "answerDetails": "Explanation\n oncontextmenu − Triggers event when a context menu is triggered.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 9123,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9124,
+            "question": "Which of the following attribute triggers event when the duration and other media data of a media element is loaded?",
+            "options": [
+              "onloadedmetadata",
+              "onloadstart",
+              "onmessage",
+              "onoffline"
+            ],
+            "answers": [
+              "onloadedmetadata"
+            ],
+            "answerDetails": "Explanation\n onloadedmetadata − Triggers event when the duration and other media data of a media element is loaded.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9125,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9126,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          }
+        ],
+        "jQuery": [
+          {
+            "questionId": 1234,
+            "question": "Is HTML5 backward compatible with old browsers?",
+            "options": [
+              "true",
+              "false"
+            ],
+            "answers": [
+              "true"
+            ],
+            "answerDetails": "Explanation\n Yes! HTML5 is designed, as much as possible, to be backward compatible with existing web browsers.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 2345,
+            "question": "Which of the following tag represents the footer of a section in HTML5?",
+            "options": [
+              "footer",
+              "section",
+              "nav",
+              "dialog"
+            ],
+            "answers": [
+              "footer"
+            ],
+            "answerDetails": "Explanation\n 'footer' tag represents the footer of a section.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 3456,
+            "question": "Which of the following input control accepts only numerical value in Web Form 2.0?",
+            "options": [
+              "week",
+              "time",
+              "number",
+              "range"
+            ],
+            "answers": [
+              "number"
+            ],
+            "answerDetails": "Explanation\n 'number' input control accepts only numerical value. The step attribute specifies the precision, defaulting to 1.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 4567,
+            "question": "Which of the following tag insists to have a value in an input control in HTML5?",
+            "options": [
+              "output",
+              "placeholder",
+              "autofocus",
+              "required"
+            ],
+            "answers": [
+              "required"
+            ],
+            "answerDetails": "Explanation\n HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 5678,
+            "question": "When a session storage data gets deleted in HTML5?",
+            "options": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+              "If you want to clear all settings, you need to call localStorage.clear() method.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated."
+            ],
+            "answerDetails": "Explanation\n The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 6789,
+            "question": "Which of the following is true about 'canvas' tag in HTML5?",
+            "options": [
+              "HTML5 element <canvas> gives you an easy and powerful way to draw graphics using JavaScript.",
+              "It can be used to draw graphs, make photo compositions or do simple (and not so simple) animations.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "Above All"
+            ],
+            "answerDetails": "Explanation\n Both of the above options are correct.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 7891,
+            "question": "Which of the following attribute specifies if the element must have it's spelling or grammar checked?",
+            "options": [
+              "item",
+              "itemcheck",
+              "spellcheck",
+              "itemgroup"
+            ],
+            "answers": [
+              "spellcheck"
+            ],
+            "answerDetails": "Explanation\n spellcheck − Specifies if the element must have it's spelling or grammar checked.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 8912,
+            "question": "Which of the following attribute triggers event when a context menu is triggered?",
+            "options": [
+              "oncontextmenu",
+              "ondrag",
+              "ondragend",
+              "ondragenter"
+            ],
+            "answers": [
+              "oncontextmenu"
+            ],
+            "answerDetails": "Explanation\n oncontextmenu − Triggers event when a context menu is triggered.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 9123,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9124,
+            "question": "Which of the following attribute triggers event when the duration and other media data of a media element is loaded?",
+            "options": [
+              "onloadedmetadata",
+              "onloadstart",
+              "onmessage",
+              "onoffline"
+            ],
+            "answers": [
+              "onloadedmetadata"
+            ],
+            "answerDetails": "Explanation\n onloadedmetadata − Triggers event when the duration and other media data of a media element is loaded.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9125,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9126,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          }
+        ]
+      },
+      "backendTechnology": {
+        "Java": [
+          {
+            "questionId": 1234,
+            "question": "Is HTML5 backward compatible with old browsers?",
+            "options": [
+              "true",
+              "false"
+            ],
+            "answers": [
+              "true"
+            ],
+            "answerDetails": "Explanation\n Yes! HTML5 is designed, as much as possible, to be backward compatible with existing web browsers.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 2345,
+            "question": "Which of the following tag represents the footer of a section in HTML5?",
+            "options": [
+              "footer",
+              "section",
+              "nav",
+              "dialog"
+            ],
+            "answers": [
+              "footer"
+            ],
+            "answerDetails": "Explanation\n 'footer' tag represents the footer of a section.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 3456,
+            "question": "Which of the following input control accepts only numerical value in Web Form 2.0?",
+            "options": [
+              "week",
+              "time",
+              "number",
+              "range"
+            ],
+            "answers": [
+              "number"
+            ],
+            "answerDetails": "Explanation\n 'number' input control accepts only numerical value. The step attribute specifies the precision, defaulting to 1.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 4567,
+            "question": "Which of the following tag insists to have a value in an input control in HTML5?",
+            "options": [
+              "output",
+              "placeholder",
+              "autofocus",
+              "required"
+            ],
+            "answers": [
+              "required"
+            ],
+            "answerDetails": "Explanation\n HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 5678,
+            "question": "When a session storage data gets deleted in HTML5?",
+            "options": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+              "If you want to clear all settings, you need to call localStorage.clear() method.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated."
+            ],
+            "answerDetails": "Explanation\n The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 6789,
+            "question": "Which of the following is true about 'canvas' tag in HTML5?",
+            "options": [
+              "HTML5 element <canvas> gives you an easy and powerful way to draw graphics using JavaScript.",
+              "It can be used to draw graphs, make photo compositions or do simple (and not so simple) animations.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "Above All"
+            ],
+            "answerDetails": "Explanation\n Both of the above options are correct.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 7891,
+            "question": "Which of the following attribute specifies if the element must have it's spelling or grammar checked?",
+            "options": [
+              "item",
+              "itemcheck",
+              "spellcheck",
+              "itemgroup"
+            ],
+            "answers": [
+              "spellcheck"
+            ],
+            "answerDetails": "Explanation\n spellcheck − Specifies if the element must have it's spelling or grammar checked.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 8912,
+            "question": "Which of the following attribute triggers event when a context menu is triggered?",
+            "options": [
+              "oncontextmenu",
+              "ondrag",
+              "ondragend",
+              "ondragenter"
+            ],
+            "answers": [
+              "oncontextmenu"
+            ],
+            "answerDetails": "Explanation\n oncontextmenu − Triggers event when a context menu is triggered.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 9123,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9124,
+            "question": "Which of the following attribute triggers event when the duration and other media data of a media element is loaded?",
+            "options": [
+              "onloadedmetadata",
+              "onloadstart",
+              "onmessage",
+              "onoffline"
+            ],
+            "answers": [
+              "onloadedmetadata"
+            ],
+            "answerDetails": "Explanation\n onloadedmetadata − Triggers event when the duration and other media data of a media element is loaded.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9125,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9126,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          }
+        ],
+        ".Net": [
+          {
+            "questionId": 1234,
+            "question": "Is HTML5 backward compatible with old browsers?",
+            "options": [
+              "true",
+              "false"
+            ],
+            "answers": [
+              "true"
+            ],
+            "answerDetails": "Explanation\n Yes! HTML5 is designed, as much as possible, to be backward compatible with existing web browsers.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 2345,
+            "question": "Which of the following tag represents the footer of a section in HTML5?",
+            "options": [
+              "footer",
+              "section",
+              "nav",
+              "dialog"
+            ],
+            "answers": [
+              "footer"
+            ],
+            "answerDetails": "Explanation\n 'footer' tag represents the footer of a section.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 3456,
+            "question": "Which of the following input control accepts only numerical value in Web Form 2.0?",
+            "options": [
+              "week",
+              "time",
+              "number",
+              "range"
+            ],
+            "answers": [
+              "number"
+            ],
+            "answerDetails": "Explanation\n 'number' input control accepts only numerical value. The step attribute specifies the precision, defaulting to 1.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 4567,
+            "question": "Which of the following tag insists to have a value in an input control in HTML5?",
+            "options": [
+              "output",
+              "placeholder",
+              "autofocus",
+              "required"
+            ],
+            "answers": [
+              "required"
+            ],
+            "answerDetails": "Explanation\n HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 5678,
+            "question": "When a session storage data gets deleted in HTML5?",
+            "options": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+              "If you want to clear all settings, you need to call localStorage.clear() method.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated."
+            ],
+            "answerDetails": "Explanation\n The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 6789,
+            "question": "Which of the following is true about 'canvas' tag in HTML5?",
+            "options": [
+              "HTML5 element <canvas> gives you an easy and powerful way to draw graphics using JavaScript.",
+              "It can be used to draw graphs, make photo compositions or do simple (and not so simple) animations.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "Above All"
+            ],
+            "answerDetails": "Explanation\n Both of the above options are correct.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 7891,
+            "question": "Which of the following attribute specifies if the element must have it's spelling or grammar checked?",
+            "options": [
+              "item",
+              "itemcheck",
+              "spellcheck",
+              "itemgroup"
+            ],
+            "answers": [
+              "spellcheck"
+            ],
+            "answerDetails": "Explanation\n spellcheck − Specifies if the element must have it's spelling or grammar checked.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 8912,
+            "question": "Which of the following attribute triggers event when a context menu is triggered?",
+            "options": [
+              "oncontextmenu",
+              "ondrag",
+              "ondragend",
+              "ondragenter"
+            ],
+            "answers": [
+              "oncontextmenu"
+            ],
+            "answerDetails": "Explanation\n oncontextmenu − Triggers event when a context menu is triggered.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 9123,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9124,
+            "question": "Which of the following attribute triggers event when the duration and other media data of a media element is loaded?",
+            "options": [
+              "onloadedmetadata",
+              "onloadstart",
+              "onmessage",
+              "onoffline"
+            ],
+            "answers": [
+              "onloadedmetadata"
+            ],
+            "answerDetails": "Explanation\n onloadedmetadata − Triggers event when the duration and other media data of a media element is loaded.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9125,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9126,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          }
+        ],
+        "php": [
+          {
+            "questionId": 1234,
+            "question": "Is HTML5 backward compatible with old browsers?",
+            "options": [
+              "true",
+              "false"
+            ],
+            "answers": [
+              "true"
+            ],
+            "answerDetails": "Explanation\n Yes! HTML5 is designed, as much as possible, to be backward compatible with existing web browsers.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 2345,
+            "question": "Which of the following tag represents the footer of a section in HTML5?",
+            "options": [
+              "footer",
+              "section",
+              "nav",
+              "dialog"
+            ],
+            "answers": [
+              "footer"
+            ],
+            "answerDetails": "Explanation\n 'footer' tag represents the footer of a section.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 3456,
+            "question": "Which of the following input control accepts only numerical value in Web Form 2.0?",
+            "options": [
+              "week",
+              "time",
+              "number",
+              "range"
+            ],
+            "answers": [
+              "number"
+            ],
+            "answerDetails": "Explanation\n 'number' input control accepts only numerical value. The step attribute specifies the precision, defaulting to 1.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 4567,
+            "question": "Which of the following tag insists to have a value in an input control in HTML5?",
+            "options": [
+              "output",
+              "placeholder",
+              "autofocus",
+              "required"
+            ],
+            "answers": [
+              "required"
+            ],
+            "answerDetails": "Explanation\n HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 5678,
+            "question": "When a session storage data gets deleted in HTML5?",
+            "options": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+              "If you want to clear all settings, you need to call localStorage.clear() method.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated."
+            ],
+            "answerDetails": "Explanation\n The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 6789,
+            "question": "Which of the following is true about 'canvas' tag in HTML5?",
+            "options": [
+              "HTML5 element <canvas> gives you an easy and powerful way to draw graphics using JavaScript.",
+              "It can be used to draw graphs, make photo compositions or do simple (and not so simple) animations.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "Above All"
+            ],
+            "answerDetails": "Explanation\n Both of the above options are correct.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 7891,
+            "question": "Which of the following attribute specifies if the element must have it's spelling or grammar checked?",
+            "options": [
+              "item",
+              "itemcheck",
+              "spellcheck",
+              "itemgroup"
+            ],
+            "answers": [
+              "spellcheck"
+            ],
+            "answerDetails": "Explanation\n spellcheck − Specifies if the element must have it's spelling or grammar checked.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 8912,
+            "question": "Which of the following attribute triggers event when a context menu is triggered?",
+            "options": [
+              "oncontextmenu",
+              "ondrag",
+              "ondragend",
+              "ondragenter"
+            ],
+            "answers": [
+              "oncontextmenu"
+            ],
+            "answerDetails": "Explanation\n oncontextmenu − Triggers event when a context menu is triggered.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 9123,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9124,
+            "question": "Which of the following attribute triggers event when the duration and other media data of a media element is loaded?",
+            "options": [
+              "onloadedmetadata",
+              "onloadstart",
+              "onmessage",
+              "onoffline"
+            ],
+            "answers": [
+              "onloadedmetadata"
+            ],
+            "answerDetails": "Explanation\n onloadedmetadata − Triggers event when the duration and other media data of a media element is loaded.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9125,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9126,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          }
+        ]
+      },
+      "storageTechnology": {
+        "Sql_PLSql": [
+          {
+            "questionId": 1234,
+            "question": "Is HTML5 backward compatible with old browsers?",
+            "options": [
+              "true",
+              "false"
+            ],
+            "answers": [
+              "true"
+            ],
+            "answerDetails": "Explanation\n Yes! HTML5 is designed, as much as possible, to be backward compatible with existing web browsers.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 2345,
+            "question": "Which of the following tag represents the footer of a section in HTML5?",
+            "options": [
+              "footer",
+              "section",
+              "nav",
+              "dialog"
+            ],
+            "answers": [
+              "footer"
+            ],
+            "answerDetails": "Explanation\n 'footer' tag represents the footer of a section.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 3456,
+            "question": "Which of the following input control accepts only numerical value in Web Form 2.0?",
+            "options": [
+              "week",
+              "time",
+              "number",
+              "range"
+            ],
+            "answers": [
+              "number"
+            ],
+            "answerDetails": "Explanation\n 'number' input control accepts only numerical value. The step attribute specifies the precision, defaulting to 1.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 4567,
+            "question": "Which of the following tag insists to have a value in an input control in HTML5?",
+            "options": [
+              "output",
+              "placeholder",
+              "autofocus",
+              "required"
+            ],
+            "answers": [
+              "required"
+            ],
+            "answerDetails": "Explanation\n HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 5678,
+            "question": "When a session storage data gets deleted in HTML5?",
+            "options": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+              "If you want to clear all settings, you need to call localStorage.clear() method.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated."
+            ],
+            "answerDetails": "Explanation\n The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 6789,
+            "question": "Which of the following is true about 'canvas' tag in HTML5?",
+            "options": [
+              "HTML5 element <canvas> gives you an easy and powerful way to draw graphics using JavaScript.",
+              "It can be used to draw graphs, make photo compositions or do simple (and not so simple) animations.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "Above All"
+            ],
+            "answerDetails": "Explanation\n Both of the above options are correct.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 7891,
+            "question": "Which of the following attribute specifies if the element must have it's spelling or grammar checked?",
+            "options": [
+              "item",
+              "itemcheck",
+              "spellcheck",
+              "itemgroup"
+            ],
+            "answers": [
+              "spellcheck"
+            ],
+            "answerDetails": "Explanation\n spellcheck − Specifies if the element must have it's spelling or grammar checked.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 8912,
+            "question": "Which of the following attribute triggers event when a context menu is triggered?",
+            "options": [
+              "oncontextmenu",
+              "ondrag",
+              "ondragend",
+              "ondragenter"
+            ],
+            "answers": [
+              "oncontextmenu"
+            ],
+            "answerDetails": "Explanation\n oncontextmenu − Triggers event when a context menu is triggered.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 9123,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9124,
+            "question": "Which of the following attribute triggers event when the duration and other media data of a media element is loaded?",
+            "options": [
+              "onloadedmetadata",
+              "onloadstart",
+              "onmessage",
+              "onoffline"
+            ],
+            "answers": [
+              "onloadedmetadata"
+            ],
+            "answerDetails": "Explanation\n onloadedmetadata − Triggers event when the duration and other media data of a media element is loaded.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9125,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9126,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          }
+        ],
+        "Oracle": [
+          {
+            "questionId": 1234,
+            "question": "Is HTML5 backward compatible with old browsers?",
+            "options": [
+              "true",
+              "false"
+            ],
+            "answers": [
+              "true"
+            ],
+            "answerDetails": "Explanation\n Yes! HTML5 is designed, as much as possible, to be backward compatible with existing web browsers.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 2345,
+            "question": "Which of the following tag represents the footer of a section in HTML5?",
+            "options": [
+              "footer",
+              "section",
+              "nav",
+              "dialog"
+            ],
+            "answers": [
+              "footer"
+            ],
+            "answerDetails": "Explanation\n 'footer' tag represents the footer of a section.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 3456,
+            "question": "Which of the following input control accepts only numerical value in Web Form 2.0?",
+            "options": [
+              "week",
+              "time",
+              "number",
+              "range"
+            ],
+            "answers": [
+              "number"
+            ],
+            "answerDetails": "Explanation\n 'number' input control accepts only numerical value. The step attribute specifies the precision, defaulting to 1.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 4567,
+            "question": "Which of the following tag insists to have a value in an input control in HTML5?",
+            "options": [
+              "output",
+              "placeholder",
+              "autofocus",
+              "required"
+            ],
+            "answers": [
+              "required"
+            ],
+            "answerDetails": "Explanation\n HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 5678,
+            "question": "When a session storage data gets deleted in HTML5?",
+            "options": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+              "If you want to clear all settings, you need to call localStorage.clear() method.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated."
+            ],
+            "answerDetails": "Explanation\n The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 6789,
+            "question": "Which of the following is true about 'canvas' tag in HTML5?",
+            "options": [
+              "HTML5 element <canvas> gives you an easy and powerful way to draw graphics using JavaScript.",
+              "It can be used to draw graphs, make photo compositions or do simple (and not so simple) animations.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "Above All"
+            ],
+            "answerDetails": "Explanation\n Both of the above options are correct.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 7891,
+            "question": "Which of the following attribute specifies if the element must have it's spelling or grammar checked?",
+            "options": [
+              "item",
+              "itemcheck",
+              "spellcheck",
+              "itemgroup"
+            ],
+            "answers": [
+              "spellcheck"
+            ],
+            "answerDetails": "Explanation\n spellcheck − Specifies if the element must have it's spelling or grammar checked.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 8912,
+            "question": "Which of the following attribute triggers event when a context menu is triggered?",
+            "options": [
+              "oncontextmenu",
+              "ondrag",
+              "ondragend",
+              "ondragenter"
+            ],
+            "answers": [
+              "oncontextmenu"
+            ],
+            "answerDetails": "Explanation\n oncontextmenu − Triggers event when a context menu is triggered.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 9123,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9124,
+            "question": "Which of the following attribute triggers event when the duration and other media data of a media element is loaded?",
+            "options": [
+              "onloadedmetadata",
+              "onloadstart",
+              "onmessage",
+              "onoffline"
+            ],
+            "answers": [
+              "onloadedmetadata"
+            ],
+            "answerDetails": "Explanation\n onloadedmetadata − Triggers event when the duration and other media data of a media element is loaded.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9125,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9126,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          }
+        ],
+        "Informatica": [
+          {
+            "questionId": 1234,
+            "question": "Is HTML5 backward compatible with old browsers?",
+            "options": [
+              "true",
+              "false"
+            ],
+            "answers": [
+              "true"
+            ],
+            "answerDetails": "Explanation\n Yes! HTML5 is designed, as much as possible, to be backward compatible with existing web browsers.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 2345,
+            "question": "Which of the following tag represents the footer of a section in HTML5?",
+            "options": [
+              "footer",
+              "section",
+              "nav",
+              "dialog"
+            ],
+            "answers": [
+              "footer"
+            ],
+            "answerDetails": "Explanation\n 'footer' tag represents the footer of a section.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 3456,
+            "question": "Which of the following input control accepts only numerical value in Web Form 2.0?",
+            "options": [
+              "week",
+              "time",
+              "number",
+              "range"
+            ],
+            "answers": [
+              "number"
+            ],
+            "answerDetails": "Explanation\n 'number' input control accepts only numerical value. The step attribute specifies the precision, defaulting to 1.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 4567,
+            "question": "Which of the following tag insists to have a value in an input control in HTML5?",
+            "options": [
+              "output",
+              "placeholder",
+              "autofocus",
+              "required"
+            ],
+            "answers": [
+              "required"
+            ],
+            "answerDetails": "Explanation\n HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
+            "questionType": "basic",
+            "icon": ""
+          },
+          {
+            "questionId": 5678,
+            "question": "When a session storage data gets deleted in HTML5?",
+            "options": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+              "If you want to clear all settings, you need to call localStorage.clear() method.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "The Session Storage Data would be deleted by the browsers immediately after the session gets terminated."
+            ],
+            "answerDetails": "Explanation\n The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 6789,
+            "question": "Which of the following is true about 'canvas' tag in HTML5?",
+            "options": [
+              "HTML5 element <canvas> gives you an easy and powerful way to draw graphics using JavaScript.",
+              "It can be used to draw graphs, make photo compositions or do simple (and not so simple) animations.",
+              "Above All",
+              "None of the above."
+            ],
+            "answers": [
+              "Above All"
+            ],
+            "answerDetails": "Explanation\n Both of the above options are correct.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 7891,
+            "question": "Which of the following attribute specifies if the element must have it's spelling or grammar checked?",
+            "options": [
+              "item",
+              "itemcheck",
+              "spellcheck",
+              "itemgroup"
+            ],
+            "answers": [
+              "spellcheck"
+            ],
+            "answerDetails": "Explanation\n spellcheck − Specifies if the element must have it's spelling or grammar checked.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 8912,
+            "question": "Which of the following attribute triggers event when a context menu is triggered?",
+            "options": [
+              "oncontextmenu",
+              "ondrag",
+              "ondragend",
+              "ondragenter"
+            ],
+            "answers": [
+              "oncontextmenu"
+            ],
+            "answerDetails": "Explanation\n oncontextmenu − Triggers event when a context menu is triggered.",
+            "questionType": "advance",
+            "icon": ""
+          },
+          {
+            "questionId": 9123,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9124,
+            "question": "Which of the following attribute triggers event when the duration and other media data of a media element is loaded?",
+            "options": [
+              "onloadedmetadata",
+              "onloadstart",
+              "onmessage",
+              "onoffline"
+            ],
+            "answers": [
+              "onloadedmetadata"
+            ],
+            "answerDetails": "Explanation\n onloadedmetadata − Triggers event when the duration and other media data of a media element is loaded.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9125,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          },
+          {
+            "questionId": 9126,
+            "question": "Which of the following attribute triggers event when dragged element is being dropped?",
+            "options": [
+              "ondrop",
+              "ondurationchange",
+              "onemptied",
+              "onended"
+            ],
+            "answers": [
+              "ondrop"
+            ],
+            "answerDetails": "Explanation\n ondrop − Triggers event when dragged element is being dropped.",
+            "questionType": "expert",
+            "icon": ""
+          }
+        ]
+      }
+    }
+  }
+}
