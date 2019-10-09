@@ -1,4 +1,5 @@
 var formEmpty = true;
+var qLimit = 5; //Question per level
 $(document).ready(() => {
     inputFunction();
     showUserActivity();
@@ -123,6 +124,19 @@ function logIn() {
 }
 /*END: Login*/
 
+/*STRAT: Generate Random Array*/
+function generateRandArr() {
+    let randArr = [];
+    for (let i = 0; i <= qLimit; i++) {
+        let temp = Math.floor(Math.random() * 10);
+        if (randArr.indexOf(temp) === -1) {
+            randArr.push(temp);
+        }
+    }
+    return randArr;
+}
+/*END: Generate Random Array*/
+
 /*START: Fetch QuestionSet*/
 function getQuestionSet() {
     showLoader();
@@ -139,11 +153,13 @@ function getQuestionSet() {
                 hideHero(); //Hiding the Hero | Login Screen
                 showDashboard(); //Showing the dashboard
                 clearForm('.hero-wrapper'); //Clearing the filled form
+
                 // Below code is for teasting purpose.
                 var encryptedResponse = encrypt(returnData);
-                var decryptedResponse = decrypt(encryptedResponse);
+                sessionStorage.setItem('encryptedResponse', encryptedResponse);
+                //                var decryptedResponse = decrypt(encryptedResponse);
                 //Popuate Technology Dashoard
-                populateTechDashBoard(returnData);
+                populateTechDashBoard();
             } else {}
         },
         function (jqXHR, textStatus, errorThrown) {
@@ -154,24 +170,61 @@ function getQuestionSet() {
 /*END: Fetch QuestionSet*/
 
 /*START: populate Technology Dashboard*/
-function populateTechDashBoard(returnData) {
+function populateTechDashBoard() {
+    let returnData = decrypt(sessionStorage.getItem('encryptedResponse'));
+    var iconPath = "assets/images/";
     var catagory = Object.keys(returnData.CoxAcademyQuestions.questionSet);
-    var techListHTML = '<ul class="technology-list"></ul>';
-    catagory.map((item) => {
-        //Print grounp
-        console.log(item);
-        $('.test-selection-body').append('<h3 class="heading">' + item + '</h3>');
-        //tech group
-        var techList = Object.keys(returnData.CoxAcademyQuestions.questionSet[item]);
-        console.log(techList);
-        $('.test-selection-body').append(techListHTML);
-        techList.map((item) => {
-            $('.technology-list:last-child').append('<li class="technology-item">' + item + '</li>');
+    //    var techListHTML = '<ul class="technology-list"></ul>';
+    catagory.map((catItem) => {
+        //Appending the Category Heading and Tech Item List
+        $('.test-selection-body').append('<h3 class="heading">' + catItem + '</h3>');
+        //Tech List
+        var techList = Object.keys(returnData.CoxAcademyQuestions.questionSet[catItem]);
+        $('.test-selection-body').append('<ul class="technology-list" catAttr="' + catItem + '"></ul>');
+        techList.map((techListItem) => {
+            $('.technology-list:last-child').append('<li class="technology-item"><img src=' + iconPath + techListItem.toLowerCase() + '.png alt="' + techListItem + '"><span>' + techListItem + '</span></li>');
         });
     });
 
 }
 /*END: populate Technology Dashboard*/
+
+/*START: Populate Question Answer*/
+function popuateQuestionAnswer(selectTech) {
+    /* NOTE: Fetching selected category */
+    let selectedCat = $('.technology-item.selected').closest('.technology-list').attr('catAttr');
+    /* NOTE: Fetching specific QA as per question level */
+    generateQuestionAsLevel(selectedCat, selectTech, 'basic');
+}
+/*END: Populate Question Answer*/
+
+function generateQuestionAsLevel(selectedCat, selectTech, levelTyp) {
+    let returnData = decrypt(sessionStorage.getItem('encryptedResponse'));
+    returnData = returnData.CoxAcademyQuestions.questionSet[selectedCat][selectTech].filter((item) => {
+        return item.questionType === levelTyp;
+    });
+
+    //Generating random question
+    let randomArr = generateRandArr();
+    //    if (randomArr[0] <= 8) {
+    //        randomArr[0] = '0' + randomArr[0] + 1;
+    //    } else {
+    //        index = index + 1;
+    //    }
+    $('.question-wrapper .question-number').html('01');
+    //Popuating Question
+    $('.question-wrapper .question').html(returnData[randomArr[0]].question);
+    $('.option-list').html('');
+    //Populating Options
+    for (var i = 0; i < returnData[randomArr[0]].options.length; i++) {
+        $('.option-list').append('<li class="option-item"><pre><xmp>' + returnData[randomArr[0]].options[i] + '</xmp></pre></li>');
+    }
+
+
+
+    //Populate QA in DOM
+}
+
 
 
 /*START:  Manage Encryption*/
@@ -248,7 +301,10 @@ function startTest() {
         // Resetting previous selection
         $('.option-item').each(function () {
             $(this).removeClass('selected');
-        })
+        });
+
+        popuateQuestionAnswer(selectTech); //Populating Question with Answers for the selected technology
+
         chooseAnswer(); //Calling Choose Answer
         /*NOTE: Fetch technology releated question answer here with selctTech variable*/
     });
@@ -277,7 +333,9 @@ function chooseAnswer() {
             ele.toggleClass('selected');
 
         } else { //Custom
+            ele.closest('.option-list').find('.option-item').removeClass('selected');
             ele.toggleClass('selected');
+
             if ($('.option-list').find('.option-item:last-child').attr('attr') === 'na') {
                 $('.option-list').find('.option-item:last-child').removeClass('selected');
             }

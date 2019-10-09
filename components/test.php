@@ -6,23 +6,11 @@
         </div>
         <div class="question-wrapper">
             <em class="question-number">01</em>
-            <h3 class="question">The following DOCTYPE are also supported in HTML5.</h3>
+            <h3 class="question"></h3>
         </div>
         <div class="option-wrapper">
             <em>Choose Answer</em>
             <ul class="option-list">
-                <li class="option-item">
-                    <pre><xmp>!DOCTYPE html</xmp></pre>
-                </li>
-                <li class="option-item">
-                    <pre><xmp><!dOCtype html></xmp></pre>
-                </li>
-                <li class="option-item">
-                    <pre><xmp><!doctype html></xmp></pre>
-                </li>
-                <li class="option-item" attr="na">
-                    <pre><xmp>Above All</xmp></pre>
-                </li>
             </ul>
         </div>
         <div class="action-wrapper">
