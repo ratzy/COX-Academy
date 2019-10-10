@@ -5,6 +5,7 @@ var totalQuestion = 10; //Demo
 var beginnerQuestion = 6; //Demo 
 var advanceQuestion = 5; //Demo 
 var expertQuestion = 4; //Demo 
+var basicQuestionArr = [];
 
 $(document).ready(() => {
     inputFunction();
@@ -193,7 +194,7 @@ function populateTechDashBoard() {
         var techList = Object.keys(returnData.CoxAcademyQuestions.questionSet[catItem]);
         $('.test-selection-body').append('<ul class="technology-list" catAttr="' + catItem + '"></ul>');
         techList.map((techListItem) => {
-            $('.technology-list:last-child').append('<li class="technology-item"><img src=' + iconPath + techListItem.toLowerCase() + '.png alt="' + techListItem + '"><span>' + techListItem + '</span></li>');
+            $('.technology-list:last-child').append('<li class="technology-item"><img src=' + iconPath + techListItem.toLowerCase().replace('.', '') + '.png alt="' + techListItem + '"><span>' + techListItem + '</span></li>');
         });
     });
 
@@ -204,15 +205,89 @@ function populateTechDashBoard() {
 function popuateQuestionAnswer(selectTech) {
     /* NOTE: Fetching selected category */
     let selectedCat = $('.technology-item.selected').closest('.technology-list').attr('catAttr');
+
+    //Generating random question
+    let randomArr = generateRandArr();
+    //If it's one digit add 0 as prefix
+    if (randomArr[0] <= 9) {
+        questionCount = 0 + questionCount;
+    } else {
+        questionCount;
+    }
+
+    let returnData = decrypt(sessionStorage.getItem('encryptedResponse'));
+    let basicRandomArr = generateRandArr();
+    basicQuestionArr = returnData.CoxAcademyQuestions.questionSet[selectedCat][selectTech].filter((item) => {
+        return item.questionType === 'basic';
+    });
+    basicQuestionArr = basicQuestionArr.filter((item, index) => {
+        return basicRandomArr.indexOf(index) !== -1
+    });
+    let advanceQuestionArr = returnData.CoxAcademyQuestions.questionSet[selectedCat][selectTech].filter((item) => {
+        return item.questionType === 'advance';
+    });
+    advanceQuestionArr = advanceQuestionArr.filter((item, index) => {
+        return basicRandomArr.indexOf(index) !== -1
+    });
+    let expertQuestionArr = returnData.CoxAcademyQuestions.questionSet[selectedCat][selectTech].filter((item) => {
+        return item.questionType === 'expert';
+    });
+    expertQuestionArr = expertQuestionArr.filter((item, index) => {
+        return basicRandomArr.indexOf(index) !== -1
+    });
+
+
+
+    generateQuestionAnswer();
+
+
     /* NOTE: Fetching specific QA as per question level */
-    generateQuestionAsLevel(selectedCat, selectTech, 'basic');
+    //    generateQuestionAsLevel(selectedCat, selectTech, 'basic');
 }
 /*END: Populate Question Answer*/
+
+
+function generateQuestionAnswer() {
+    $('.question-wrapper .question-number').html(questionCount);
+    //Popuating Question
+    $('.question-wrapper .question').html(basicQuestionArr[questionCount - 1].question);
+    $('.option-list').html('');
+    //Populating Options
+    for (var i = 0; i < basicQuestionArr[questionCount].options.length; i++) {
+        $('.option-list').append('<li class="option-item"><pre><xmp>' + basicQuestionArr[questionCount - 1].options[i] + '</xmp></pre></li>');
+    }
+
+    //Getting correct answer and answer details
+    correctAnswer = basicQuestionArr[questionCount - 1].answers;
+    answerDetails = basicQuestionArr[questionCount - 1].answerDetails;
+    $('.answer-desc-wrapper .answer-block xmp').html('');
+
+    for (var i = 0; i <= correctAnswer.length; i++) {
+        $('.answer-desc-wrapper .answer-block xmp').append(correctAnswer[i]);
+    }
+
+    $('.answer-desc-wrapper .answer-desc-block p').html(answerDetails);
+    $('.current-question').html(questionCount);
+
+    submitQuestion(correctAnswer);
+}
+
 
 /*START: Generate Questions and options as question level*/
 function generateQuestionAsLevel(selectedCat, selectTech, levelTyp) {
     let correctAnswer, answerDetails;
     let returnData = decrypt(sessionStorage.getItem('encryptedResponse'));
+
+    let basicQuestionArr = returnData.CoxAcademyQuestions.questionSet[selectedCat][selectTech].filter((item) => {
+        return item.questionType === 'basic';
+    });
+    let advanceQuestionArr = returnData.CoxAcademyQuestions.questionSet[selectedCat][selectTech].filter((item) => {
+        return item.questionType === 'advance';
+    });
+    let expertQuestionArr = returnData.CoxAcademyQuestions.questionSet[selectedCat][selectTech].filter((item) => {
+        return item.questionType === 'expert';
+    });
+
     returnData = returnData.CoxAcademyQuestions.questionSet[selectedCat][selectTech].filter((item) => {
         return item.questionType === levelTyp;
     });
@@ -235,16 +310,17 @@ function generateQuestionAsLevel(selectedCat, selectTech, levelTyp) {
     }
 
     //Getting correct answer and answer details
-    correctAnswer = returnData[randomArr[0]].answers;
-    answerDetails = returnData[randomArr[0]].answerDetails;
-    $('.answer-desc-wrapper .answer-block xmp').html('');
+    if (questionCount <= qLimit) {
+        correctAnswer = returnData[randomArr[0]].answers;
+        answerDetails = returnData[randomArr[0]].answerDetails;
+        $('.answer-desc-wrapper .answer-block xmp').html('');
 
-    for (var i = 0; i <= correctAnswer.length; i++) {
-        $('.answer-desc-wrapper .answer-block xmp').append(correctAnswer[i]);
+        for (var i = 0; i <= correctAnswer.length; i++) {
+            $('.answer-desc-wrapper .answer-block xmp').append(correctAnswer[i]);
+        }
+
+        $('.answer-desc-wrapper .answer-desc-block p').html(answerDetails);
     }
-
-    $('.answer-desc-wrapper .answer-desc-block p').html(answerDetails);
-
     submitQuestion(correctAnswer);
 
 }
@@ -290,9 +366,9 @@ function submitQuestion(correctAnswer) {
 
         showAnsDesc();
         //Controlling disable/enable next/prev button according to question flow
-        if (questionCount >= 1) {
+        if (questionCount == 0) {
             ele.closest('.action-wrapper').find('.next-btn').removeClass('disabled');
-        } else if (questionCount > 1) {
+        } else if (questionCount >= 1) {
             ele.closest('.action-wrapper').find('.btn').removeClass('disabled');
         } else if (questionCount == totalQuestion) {
             ele.closest('.action-wrapper').find('.btn.nxt-btn').addClass('disabled');
@@ -306,7 +382,8 @@ function submitQuestion(correctAnswer) {
 
 /*SATRT: Next Question*/
 function nextQuestion() {
-    $(document).on('click', '.test-screen-body .next-btn', function () {
+    $(document).on('click', '.test-screen-body .next-btn:not(.disabled)', function () {
+        $(this).addClass('disabled');
         $('.submit-btn').removeClass('clicked');
         if (questionCount <= beginnerQuestion) {
             $('.progress-item:first-child .range').css('width', 'calc(100%/' + beginnerQuestion);
@@ -315,8 +392,14 @@ function nextQuestion() {
         } else {
             $('.progress-item:last-child .range').css('width', 'calc(100%/' + beginnerQuestion);
         }
+        if (questionCount <= qLimit) {
+            questionCount++;
+            generateQuestionAnswer();
+            return false;
+        }
 
     });
+    return false;
 }
 /*END: Next Question*/
 
