@@ -1,11 +1,18 @@
 var formEmpty = true;
 var qLimit = 5; //Question per level
+var questionCount = 1; //Counter to control the question flow
+var totalQuestion = 10; //Demo 
+var beginnerQuestion = 6; //Demo 
+var advanceQuestion = 5; //Demo 
+var expertQuestion = 4; //Demo 
+
 $(document).ready(() => {
     inputFunction();
     showUserActivity();
     logIn();
     logOut();
     selectTech();
+    //    nextQuestion();
 });
 
 /*START: Input*/
@@ -49,17 +56,17 @@ function hideLoader() {
 }
 /*END: Hide Loader*/
 
-/*START: Hide Hero*/
-function hideHero() {
-    $('.hero-wrapper').addClass('hide');
-}
-/*END: Hide Hero*/
-
 /*START: Show Hero*/
 function showHero() {
     $('.hero-wrapper').removeClass('hide');
 }
 /*END: Show Hero*/
+
+/*START: Hide Hero*/
+function hideHero() {
+    $('.hero-wrapper').addClass('hide');
+}
+/*END: Hide Hero*/
 
 /*START: Showing Dashboard*/
 function showDashboard() {
@@ -149,9 +156,13 @@ function getQuestionSet() {
         function (returnData) {
             if (returnData && returnData.CoxAcademyQuestions && returnData.CoxAcademyQuestions.responseHeader && returnData.CoxAcademyQuestions.responseHeader.successFlag && returnData.CoxAcademyQuestions.responseHeader.successFlag.toLowerCase() === 'true') {
                 // TO-DO:
-                hideLoader();
                 hideHero(); //Hiding the Hero | Login Screen
-                showDashboard(); //Showing the dashboard
+                setTimeout(function () {
+                    hideLoader();
+                    showDashboard(); //Showing the dashboard
+                }, 300);
+
+
                 clearForm('.hero-wrapper'); //Clearing the filled form
 
                 // Below code is for teasting purpose.
@@ -198,7 +209,9 @@ function popuateQuestionAnswer(selectTech) {
 }
 /*END: Populate Question Answer*/
 
+/*START: Generate Questions and options as question level*/
 function generateQuestionAsLevel(selectedCat, selectTech, levelTyp) {
+    let correctAnswer, answerDetails;
     let returnData = decrypt(sessionStorage.getItem('encryptedResponse'));
     returnData = returnData.CoxAcademyQuestions.questionSet[selectedCat][selectTech].filter((item) => {
         return item.questionType === levelTyp;
@@ -206,12 +219,13 @@ function generateQuestionAsLevel(selectedCat, selectTech, levelTyp) {
 
     //Generating random question
     let randomArr = generateRandArr();
-    //    if (randomArr[0] <= 8) {
-    //        randomArr[0] = '0' + randomArr[0] + 1;
-    //    } else {
-    //        index = index + 1;
-    //    }
-    $('.question-wrapper .question-number').html('01');
+    //If it's one digit add 0 as prefix
+    if (randomArr[0] <= 9) {
+        questionCount = 0 + questionCount;
+    } else {
+        questionCount;
+    }
+    $('.question-wrapper .question-number').html(questionCount);
     //Popuating Question
     $('.question-wrapper .question').html(returnData[randomArr[0]].question);
     $('.option-list').html('');
@@ -220,12 +234,105 @@ function generateQuestionAsLevel(selectedCat, selectTech, levelTyp) {
         $('.option-list').append('<li class="option-item"><pre><xmp>' + returnData[randomArr[0]].options[i] + '</xmp></pre></li>');
     }
 
+    //Getting correct answer and answer details
+    correctAnswer = returnData[randomArr[0]].answers;
+    answerDetails = returnData[randomArr[0]].answerDetails;
+    $('.answer-desc-wrapper .answer-block xmp').html('');
 
+    for (var i = 0; i <= correctAnswer.length; i++) {
+        $('.answer-desc-wrapper .answer-block xmp').append(correctAnswer[i]);
+    }
 
-    //Populate QA in DOM
+    $('.answer-desc-wrapper .answer-desc-block p').html(answerDetails);
+
+    submitQuestion(correctAnswer);
+
 }
+/*END: Generate Questions and options as question level*/
 
+/*START: SUbmit Answer*/
+function submitQuestion(correctAnswer) {
+    var ele, selectedAnswer;
+    var selectedAnswers = [];
+    $(document).on('click', '.test-screen-body .submit-btn', function () {
+        ele = $(this);
+        ele.addClass('clicked');
+        ele.closest('.test-screen-body').find('.option-item.selected').each(function () {
+            selectedAnswer = $(this).find('xmp').text();
+            selectedAnswers.push(selectedAnswer);
+        });
 
+        //Checking the answer if correct or wrong
+        if (correctAnswer == 'Above All' && selectedAnswers.indexOf('Above All') != -1) {
+            $('.test-screen-body').find('.option-item.selected').each(function () {
+                $(this).addClass('correct');
+            });
+        } else {
+            for (var i = 0; i <= selectedAnswer.length; i++) {
+                if (correctAnswer.indexOf(selectedAnswer[i]) != -1) {
+                    $('.test-screen-body').find('.option-item.selected').each(function () {
+                        $(this).addClass('correct');
+                    });
+                } else {
+                    $('.test-screen-body').find('.option-item.selected').each(function () {
+                        $(this).addClass('wrong');
+                    });
+
+                    $('.test-screen-body').find('.option-item').each(function () {
+                        var option = $(this).find('xmp').text();
+                        if (correctAnswer.indexOf(option) != -1) {
+                            $(this).addClass('correct');
+                        }
+                    });
+                }
+            }
+        }
+
+        showAnsDesc();
+        //Controlling disable/enable next/prev button according to question flow
+        if (questionCount >= 1) {
+            ele.closest('.action-wrapper').find('.next-btn').removeClass('disabled');
+        } else if (questionCount > 1) {
+            ele.closest('.action-wrapper').find('.btn').removeClass('disabled');
+        } else if (questionCount == totalQuestion) {
+            ele.closest('.action-wrapper').find('.btn.nxt-btn').addClass('disabled');
+        } else {
+            ele.closest('.action-wrapper').find('.btn.prev-btn').addClass('disabled');
+        }
+
+    });
+}
+/*END: SUbmit Answer*/
+
+/*SATRT: Next Question*/
+function nextQuestion() {
+    $(document).on('click', '.test-screen-body .next-btn', function () {
+        $('.submit-btn').removeClass('clicked');
+        if (questionCount <= beginnerQuestion) {
+            $('.progress-item:first-child .range').css('width', 'calc(100%/' + beginnerQuestion);
+        } else if (questionCount > beginnerQuestion && questionCount <= advanceQuestion) {
+            $('.progress-item:nth-child(2) .range').css('width', 'calc(100%/' + beginnerQuestion);
+        } else {
+            $('.progress-item:last-child .range').css('width', 'calc(100%/' + beginnerQuestion);
+        }
+
+    });
+}
+/*END: Next Question*/
+
+/*START: Show Answer Description*/
+function showAnsDesc() {
+    $('.bg-overlay, .answer-desc-wrapper').addClass('show');
+}
+/*END: Show Answer Description*/
+
+/*START: Hide Answer Description*/
+function hideAnsDesc() {
+    $('.bg-overlay, .answer-desc-wrapper').removeClass('show');
+    nextQuestion();
+
+}
+/*END: Hide Answer Description*/
 
 /*START:  Manage Encryption*/
 function encrypt(data) {
@@ -316,7 +423,11 @@ function chooseAnswer() {
     var ele;
     $(document).on('click', '.option-item', function () {
         ele = $(this);
-
+        ele.closest('.test-screen-body').find('.submit-btn').removeClass('disabled');
+        //Once submit button is clicked option cann't be changed
+        if ($('.submit-btn').hasClass('clicked')) {
+            return false;
+        }
         //Select All
         if (ele.attr('attr') == "sa") {
             ele.closest('.option-list').find('.option-item').each(function () {
@@ -333,11 +444,16 @@ function chooseAnswer() {
             ele.toggleClass('selected');
 
         } else { //Custom
-            ele.closest('.option-list').find('.option-item').removeClass('selected');
+            //            ele.closest('.option-list').find('.option-item').removeClass('selected');
             ele.toggleClass('selected');
 
             if ($('.option-list').find('.option-item:last-child').attr('attr') === 'na') {
                 $('.option-list').find('.option-item:last-child').removeClass('selected');
+            }
+
+
+            if (!$('.option-list').find('.option-item.selected').length) {
+                $('.submit-btn').addClass('disabled');
             }
         }
 
