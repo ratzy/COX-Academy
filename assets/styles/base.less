@@ -720,7 +720,7 @@ header {
             color: @blackColor;
         }
 
-        .totl-question {
+        .total-question {
             .medium-font-size;
             color: @greyColor;
         }
@@ -848,6 +848,7 @@ header {
             color: @whiteColor;
             letter-spacing: 0.15rem;
             padding: .2rem 0;
+            z-index: 2;
 
             .range {
                 content: '';
@@ -856,6 +857,7 @@ header {
                 left: 0;
                 height: 100%;
                 background: #6266f7;
+                z-index: -1;
             }
 
             &:nth-child(2).range {
@@ -864,6 +866,10 @@ header {
 
             &:last-child.range {
                 background: #313aff;
+            }
+
+            em {
+                color: #e4e4e4;
             }
         }
 
@@ -888,7 +894,8 @@ header {
 
     em {
         padding-right: 2rem;
-        color: #828282;
+        color: #636363;
+        z-index: 1;
     }
 
 }

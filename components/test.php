@@ -3,7 +3,7 @@
         <div class="test-screen-body">
             <div class="question-progess-indicator">
                 <span class="current-question">1</span>
-                <span class="totl-question">/ 9</span>
+                <span class="total-question"></span>
             </div>
             <div class="question-wrapper">
                 <em class="question-number">01</em>
@@ -24,9 +24,9 @@
         </div>
         <div class="test-screen-footer">
             <ul class="progress-list">
-                <li class="progress-item"><span class="range"></span>Beginner <em>(6)</em></li>
-                <li class="progress-item"><span class="range"></span>Advance <em>(5)</em></li>
-                <li class="progress-item"><span class="range"></span>Expert <em>(4)</em></li>
+                <li class="progress-item"><span class="range"></span>Beginner <em></em></li>
+                <li class="progress-item"><span class="range"></span>Advance <em></em></li>
+                <li class="progress-item"><span class="range"></span>Expert <em></em></li>
             </ul>
             <div class="flex-wrapper flex-center">
                 <em>Earned badges</em>

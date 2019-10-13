@@ -1,12 +1,14 @@
 var formEmpty = true;
 var questionCount = 1; //Counter to control the question flow
-var totalQuestion = 10; //Demo 
 var beginnerQuestion = 0; //Demo 
 var advanceQuestion = 0; //Demo 
 var expertQuestion = 0; //Demo 
 var basicQuestionArr = [];
 var advanceQuestionArr = [];
 var expertQuestionArr = [];
+var selectedAnswers = [];
+var correctAnswer = [];
+var answerDetails = [];
 
 $(document).ready(() => {
     inputFunction();
@@ -14,6 +16,8 @@ $(document).ready(() => {
     logIn();
     logOut();
     selectTech();
+    nextQuestion();
+    prevQuestion();
 });
 
 /*START: Input*/
@@ -139,10 +143,10 @@ function generateRandArr(limit) {
         if (randArr.indexOf(temp) === -1) {
             randArr.push(temp);
         } else {
-            if(i===1){
-                i=1;
-            }else{
-                i -=1;
+            if (i === 1) {
+                i = 1;
+            } else {
+                i -= 1;
             }
         }
     }
@@ -167,10 +171,7 @@ function getQuestionSet() {
                     hideLoader();
                     showDashboard(); //Showing the dashboard
                 }, 300);
-
-
                 clearForm('.hero-wrapper'); //Clearing the filled form
-
                 // Below code is for teasting purpose.
                 var encryptedResponse = encrypt(returnData);
                 sessionStorage.setItem('encryptedResponse', encryptedResponse);
@@ -206,8 +207,8 @@ function populateTechDashBoard() {
 }
 /*END: populate Technology Dashboard*/
 
-/*START: Populate Question Answer*/
-function popuateQuestionAnswer(selectTech) {
+/*START: Fetching Question Answer*/
+function generateQuestionAnswer(selectTech) {
     /* NOTE: Fetching selected category */
     let selectedCat = $('.technology-item.selected').closest('.technology-list').attr('catAttr');
 
@@ -246,18 +247,23 @@ function popuateQuestionAnswer(selectTech) {
     expertQuestionArr = expertQuestionArr.filter((item, index) => {
         return expertRandArr.indexOf(index) !== -1
     });
-    debugger
+    //Populatating question number into progress bar
+    $('.progress-item:first-child em').html('(' + basicQuestionArr.length + ')');
+    $('.progress-item:nth-child(2) em').html('(' + advanceQuestionArr.length + ')');
+    $('.progress-item:last-child em').html('(' + expertQuestionArr.length + ')');
 
-    generateQuestionAnswer();
+    populateQuestionAnswerDOM();
+    //Populating Total Question Number
+    $('.total-question').html('/ ' + parseInt(beginnerQuestion + advanceQuestion + expertQuestion));
 
     /* NOTE: Fetching specific QA as per question level */
     //    generateQuestionAsLevel(selectedCat, selectTech, 'basic');
 }
-/*END: Populate Question Answer*/
+/*END: Fetching Question Answer*/
 
-
-function generateQuestionAnswer() {
-    if(basicQuestionArr.length < questionCount){
+/*START: Populating Question Answer into DOM*/
+function populateQuestionAnswerDOM() {
+    if (basicQuestionArr.length < questionCount) {
         return false;
     }
     $('.question-wrapper .question-number').html(questionCount);
@@ -265,9 +271,10 @@ function generateQuestionAnswer() {
     $('.question-wrapper .question').html(basicQuestionArr[questionCount - 1].question);
     $('.option-list').html('');
     //Populating Options
-    for (var i = 0; i < basicQuestionArr[questionCount-1].options.length; i++) {
+    for (var i = 0; i < basicQuestionArr[questionCount - 1].options.length; i++) {
         $('.option-list').append('<li class="option-item"><pre><xmp>' + basicQuestionArr[questionCount - 1].options[i] + '</xmp></pre></li>');
     }
+
 
     //Getting correct answer and answer details
     correctAnswer = basicQuestionArr[questionCount - 1].answers;
@@ -282,139 +289,131 @@ function generateQuestionAnswer() {
 
     $('.answer-desc-wrapper .answer-desc-block p').html(answerDetails);
     $('.current-question').html(questionCount);
+    //Controlling disable/enable next/prev button according to question flow
 
     submitQuestion(correctAnswer);
 }
+/*END: Populating Question Answer into DOM*/
 
-
-/*START: Generate Questions and options as question level*/
-/*function generateQuestionAsLevel(selectedCat, selectTech, levelTyp) {
-    let correctAnswer, answerDetails;
-    let returnData = decrypt(sessionStorage.getItem('encryptedResponse'));
-
-    let basicQuestionArr = returnData.CoxAcademyQuestions.questionSet[selectedCat][selectTech].filter((item) => {
-        return item.questionType === 'basic';
-    });
-    let advanceQuestionArr = returnData.CoxAcademyQuestions.questionSet[selectedCat][selectTech].filter((item) => {
-        return item.questionType === 'advance';
-    });
-    let expertQuestionArr = returnData.CoxAcademyQuestions.questionSet[selectedCat][selectTech].filter((item) => {
-        return item.questionType === 'expert';
-    });
-
-    returnData = returnData.CoxAcademyQuestions.questionSet[selectedCat][selectTech].filter((item) => {
-        return item.questionType === levelTyp;
-    });
-
-    //Generating random question
-    let randomArr = generateRandArr();
-    //If it's one digit add 0 as prefix
-    if (randomArr[0] <= 9) {
-        questionCount = 0 + questionCount;
+/*START: Activating action button on question count condition*/
+function checkActionBtn() {
+    if (questionCount == 1) {
+        $('.test-screen-body .action-wrapper').find('.btn:not(.prev-btn)').removeClass('disabled');
+    } else if (questionCount > 1) {
+        $('.test-screen-body .action-wrapper').find('.btn').removeClass('disabled');
+    } else if (questionCount == totalQuestion) {
+        $('.test-screen-body .action-wrapper').find('.btn.nxt-btn').addClass('disabled');
     } else {
-        questionCount;
+        $('.test-screen-body .action-wrapper').find('.btn.prev-btn').addClass('disabled');
     }
-    $('.question-wrapper .question-number').html(questionCount);
-    //Popuating Question
-    $('.question-wrapper .question').html(returnData[randomArr[0]].question);
-    $('.option-list').html('');
-    //Populating Options
-    for (var i = 0; i < returnData[randomArr[0]].options.length; i++) {
-        $('.option-list').append('<li class="option-item"><pre><xmp>' + returnData[randomArr[0]].options[i] + '</xmp></pre></li>');
-    }
+}
+/*END: Activating action button on question count condition*/
 
-    //Getting correct answer and answer details
-    if (questionCount <= qLimit) {
-        correctAnswer = returnData[randomArr[0]].answers;
-        answerDetails = returnData[randomArr[0]].answerDetails;
-        $('.answer-desc-wrapper .answer-block xmp').html('');
-
-        for (var i = 0; i <= correctAnswer.length; i++) {
-            $('.answer-desc-wrapper .answer-block xmp').append(correctAnswer[i]);
-        }
-
-        $('.answer-desc-wrapper .answer-desc-block p').html(answerDetails);
-    }
-    submitQuestion(correctAnswer);
-
-}*/
-/*END: Generate Questions and options as question level*/
-
-/*START: SUbmit Answer*/
+/*START: Submit Answer*/
 function submitQuestion(correctAnswer) {
     var ele, selectedAnswer;
-    var selectedAnswers = [];
-    $(document).on('click', '.test-screen-body .submit-btn', function () {
+    $(document).one('click', '.test-screen-body .submit-btn', function () {
+        var tempArr = [];
         ele = $(this);
         ele.addClass('clicked');
-        ele.closest('.test-screen-body').find('.option-item.selected').each(function () {
-            selectedAnswer = $(this).find('xmp').text();
-            selectedAnswers.push(selectedAnswer);
-        });
+        if (questionCount > selectedAnswers.length) {
+            ele.closest('.test-screen-body').find('.option-item.selected').each(function () {
+                selectedAnswer = $(this).find('xmp').text();
+                tempArr.push(selectedAnswer);
+            });
+            selectedAnswers.push(tempArr);
+        }
 
         //Checking the answer if correct or wrong
-        if (correctAnswer == 'Above All' && selectedAnswers.indexOf('Above All') != -1) {
-            $('.test-screen-body').find('.option-item.selected').each(function () {
-                $(this).addClass('correct');
-            });
-        } else {
-            for (var i = 0; i <= selectedAnswers.length; i++) {
-                if (correctAnswer.indexOf(selectedAnswers[i]) != -1) {
-                    $('.test-screen-body').find('.option-item.selected').each(function () {
-                        $(this).addClass('correct');
-                    });
-                } else {
-                    $('.test-screen-body').find('.option-item.selected').each(function () {
-                        $(this).addClass('wrong');
-                    });
-
-                    $('.test-screen-body').find('.option-item').each(function () {
-                        var option = $(this).find('xmp').text();
-                        if (correctAnswer.indexOf(option) != -1) {
-                            $(this).addClass('correct');
-                        }
-                    });
-                }
-            }
-        }
+        checkAnswer();
 
         showAnsDesc();
         //Controlling disable/enable next/prev button according to question flow
-        if (questionCount == 0) {
-            ele.closest('.action-wrapper').find('.next-btn').removeClass('disabled');
-        } else if (questionCount >= 1) {
-            ele.closest('.action-wrapper').find('.btn').removeClass('disabled');
-        } else if (questionCount == totalQuestion) {
-            ele.closest('.action-wrapper').find('.btn.nxt-btn').addClass('disabled');
-        } else {
-            ele.closest('.action-wrapper').find('.btn.prev-btn').addClass('disabled');
-        }
+        checkActionBtn();
+        controllProgressList();
     });
 }
-/*END: SUbmit Answer*/
+/*END: Submit Answer*/
+
+/*START: Checking Given Answer*/
+function checkAnswer() {
+    if (correctAnswer == 'Above All' && selectedAnswers.indexOf('Above All') != -1) {
+        $('.test-screen-body').find('.option-item.selected').each(function () {
+            $(this).addClass('correct');
+        });
+    } else {
+        $('.option-list .option-item').each(function (i) {
+            var selecedItem = $(this).find('xmp').html();
+            $.each(selectedAnswers[questionCount - 1], (index, item) => {
+                if (selecedItem === item && !$(this).hasClass('selected')) {
+                    $(this).addClass('selected');
+                }
+            });
+            if (correctAnswer.indexOf(selecedItem) !== -1) {
+                $(this).removeClass('wrong').addClass('correct');
+            } else if ($(this).hasClass('selected')) {
+                $(this).removeClass('correct').addClass('wrong');
+            }
+        });
+    }
+}
+/*END: Checking Given Answer*/
 
 /*SATRT: Next Question*/
 function nextQuestion() {
     $(document).on('click', '.test-screen-body .next-btn:not(.disabled)', function () {
-        $(this).addClass('disabled');
+        //        $(this).addClass('disabled');
         $('.submit-btn').removeClass('clicked');
-        // if (questionCount <= beginnerQuestion) {
-        if (questionCount <= basicQuestionArr.length) {
-            // $('.progress-item:first-child .range').css('width', 'calc(100%/' + beginnerQuestion);
-            $('.progress-item:first-child .range').css('width', 'calc(100%/' + basicQuestionArr.length);
-        // } else if (questionCount > beginnerQuestion && questionCount <= advanceQuestion) {
-        } else if (questionCount > basicQuestionArr.length && questionCount <= advanceQuestionArr.length) {
-            $('.progress-item:nth-child(2) .range').css('width', 'calc(100%/' +  basicQuestionArr.length);//Need to change
-        } else {
-            $('.progress-item:last-child .range').css('width', 'calc(100%/' + basicQuestionArr.length);//Need to change
-        }
+
         if (questionCount <= basicQuestionArr.length) {
             questionCount++;
-            generateQuestionAnswer();
+            populateQuestionAnswerDOM();
+            checkActionBtn();
+            if (questionCount <= selectedAnswers.length) {
+                checkAnswer();
+            }
         }
+
     });
 }
 /*END: Next Question*/
+
+/*START: Previous Question*/
+function prevQuestion() {
+    $(document).on('click', '.test-screen-body .prev-btn:not(.disabled)', function () {
+        $(this).addClass('disabled');
+        $('.submit-btn').removeClass('clicked');
+        if (questionCount <= basicQuestionArr.length) {
+            questionCount--;
+            populateQuestionAnswerDOM();
+            checkActionBtn();
+            $('.option-item').each(function () {
+                var text = $(this).find('xmp').text();
+                for (var i = 0; i < selectedAnswers[questionCount - 1].length; i++) {
+                    if (text == selectedAnswers[questionCount - 1]) {
+                        $(this).addClass('selected');
+                    }
+                }
+            });
+        }
+        checkAnswer();
+    });
+}
+
+/*END: Previous Question*/
+
+/*START: Controll Progress List*/
+function controllProgressList() {
+    if (questionCount <= basicQuestionArr.length) {
+        //            $('.progress-item:first-child .range').css('width', 'calc(100%/' + basicQuestionArr.length + ')' * +questionCount);
+        $('.progress-item:first-child .range').css('width', 'calc((100%/' + basicQuestionArr.length + ')*' + questionCount + ')');
+    } else if (questionCount > basicQuestionArr.length && questionCount <= advanceQuestionArr.length) {
+        $('.progress-item:first-child .range').css('width', questionCount * 'calc(100%/' + basicQuestionArr.length + ')'); //Need to change
+    } else {
+        $('.progress-item:first-child .range').css('width', questionCount * 'calc(100%/' + basicQuestionArr.length + ')'); //Need to change
+    }
+}
+/*END: Controll Progress List*/
 
 /*START: Show Answer Description*/
 function showAnsDesc() {
@@ -425,7 +424,6 @@ function showAnsDesc() {
 /*START: Hide Answer Description*/
 function hideAnsDesc() {
     $('.bg-overlay, .answer-desc-wrapper').removeClass('show');
-    nextQuestion();
 
 }
 /*END: Hide Answer Description*/
@@ -465,6 +463,7 @@ function logOut() {
             hideDashboard(); //Hiding Dashboard
             showHero(); //Showing Hero/ Login Page;
         }, 100);
+        resetVariable(); //Reseting the global variables
     });
 }
 /*END: Logout*/
@@ -505,7 +504,7 @@ function startTest() {
             $(this).removeClass('selected');
         });
 
-        popuateQuestionAnswer(selectTech); //Populating Question with Answers for the selected technology
+        generateQuestionAnswer(selectTech); //Populating Question with Answers for the selected technology
 
         chooseAnswer(); //Calling Choose Answer
         /*NOTE: Fetch technology releated question answer here with selctTech variable*/
@@ -539,7 +538,6 @@ function chooseAnswer() {
             ele.toggleClass('selected');
 
         } else { //Custom
-            //            ele.closest('.option-list').find('.option-item').removeClass('selected');
             ele.toggleClass('selected');
 
             if ($('.option-list').find('.option-item:last-child').attr('attr') === 'na') {
@@ -554,3 +552,19 @@ function chooseAnswer() {
     });
 }
 /*END: Choose Answer form Options*/
+
+/*START: Reset Variable*/
+function resetVariable() {
+    formEmpty = true;
+    questionCount = 1;
+    beginnerQuestion = 0;
+    advanceQuestion = 0;
+    expertQuestion = 0;
+    basicQuestionArr = [];
+    advanceQuestionArr = [];
+    expertQuestionArr = [];
+    selectedAnswers = [];
+    correctAnswer = [];
+    answerDetails = [];
+}
+/*END: Reset Variable*/

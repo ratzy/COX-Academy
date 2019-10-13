@@ -805,7 +805,7 @@ header .user-profile-wrapper.show .user-info i {
     color: #272727;
 }
 
-.test-screen-body .question-progess-indicator .totl-question {
+.test-screen-body .question-progess-indicator .total-question {
     font-size: 1.25rem;
     color: #676767;
 }
@@ -939,6 +939,7 @@ header .user-profile-wrapper.show .user-info i {
     color: #fff;
     letter-spacing: 0.15rem;
     padding: 0.2rem 0;
+    z-index: 2;
 }
 
 .test-screen-footer .progress-list .progress-item .range {
@@ -948,6 +949,7 @@ header .user-profile-wrapper.show .user-info i {
     left: 0;
     height: 100%;
     background: #6266f7;
+    z-index: -1;
 }
 
 .test-screen-footer .progress-list .progress-item:nth-child(2).range {
@@ -956,6 +958,10 @@ header .user-profile-wrapper.show .user-info i {
 
 .test-screen-footer .progress-list .progress-item:last-child.range {
     background: #313aff;
+}
+
+.test-screen-footer .progress-list .progress-item em {
+    color: #e4e4e4;
 }
 
 .test-screen-footer .badge-item {
@@ -981,7 +987,8 @@ header .user-profile-wrapper.show .user-info i {
 
 .test-screen-footer em {
     padding-right: 2rem;
-    color: #828282;
+    color: #636363;
+    z-index: 1;
 }
 
 .answer-desc-wrapper {
