@@ -807,6 +807,10 @@ header {
         .btn {
             margin-right: .5rem;
             font-size: .65rem;
+
+            &:not(.submit-btn) i {
+                display: none;
+            }
         }
 
         .btn:first-child,
@@ -852,6 +856,7 @@ header {
             letter-spacing: 0.15rem;
             padding: .2rem 0;
             z-index: 2;
+
             .range {
                 content: '';
                 position: absolute;
@@ -944,9 +949,10 @@ header {
     }
 }
 
-pre{
+pre {
     word-break: break-word;
 }
+
 xmp {
     margin: 0;
     font-family: @primaryFont;

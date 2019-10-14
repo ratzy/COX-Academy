@@ -15,10 +15,10 @@
                 </ul>
             </div>
             <div class="action-wrapper">
-                <button class="btn secondary-btn prev-btn disabled">Previous</button>
-                <button class="btn secondary-btn next-btn disabled">Next</button>
+                <button class="btn secondary-btn prev-btn disabled"><i class="fa fa-angle-left"></i><em>Previous</em></button>
+                <button class="btn secondary-btn next-btn disabled"><i class="fa fa-angle-right"></i><em>Next</em></button>
                 <button class="btn primary-btn submit-btn disabled">
-                    Submit<i class="fa fa-angle-right"></i></button>
+                    <em>Submit</em><i class="fa fa-angle-right"></i></button>
 
             </div>
         </div>

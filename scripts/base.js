@@ -458,7 +458,7 @@ function checkBadgeLevel() {
     if (questionCount == beginnerQuestion) {
         $('.test-screen-footer .badge-item:first-child').addClass('active');
     } else if (questionCount == (beginnerQuestion + advanceQuestion)) {
-        $('.test-screen-footer .badge-item:nt-child(2)').addClass('active');
+        $('.test-screen-footer .badge-item:nth-child(2)').addClass('active');
     } else if (questionCount == (beginnerQuestion + advanceQuestion + expertQuestion)) {
         $('.test-screen-footer .badge-item:last-child').addClass('active');
     }
