@@ -708,7 +708,10 @@ header {
 
 .test-screen-body {
     .rel-wrapper;
-    padding: 3rem 5%;
+    padding: 2rem 5%;
+    height: calc(~"90vh - 10rem");
+    overflow: hidden;
+    overflow-y: auto;
 
     .question-progess-indicator {
         position: absolute;
@@ -849,7 +852,6 @@ header {
             letter-spacing: 0.15rem;
             padding: .2rem 0;
             z-index: 2;
-
             .range {
                 content: '';
                 position: absolute;
@@ -883,7 +885,7 @@ header {
         -ms-filter: grayscale(1);
         -o-filter: grayscale(1);
 
-        &.selected {
+        &.active {
             filter: grayscale(0);
             -webkit-filter: grayscale(0);
             -moz-filter: grayscale(0);
@@ -942,10 +944,14 @@ header {
     }
 }
 
-
+pre{
+    word-break: break-word;
+}
 xmp {
     margin: 0;
     font-family: @primaryFont;
+    white-space: normal;
+    line-height: 1.3;
 }
 
 /*END: Test Screen*/
@@ -1002,7 +1008,7 @@ xmp {
 
         img {
             .block-element;
-            width: 3rem;
+            width: 2rem;
             margin: auto;
         }
 

@@ -194,7 +194,6 @@ function populateTechDashBoard() {
     let returnData = decrypt(sessionStorage.getItem('encryptedResponse'));
     var iconPath = "assets/images/";
     var catagory = Object.keys(returnData.CoxAcademyQuestions.questionSet);
-    //    var techListHTML = '<ul class="technology-list"></ul>';
     $('.test-selection-body').html('');
     catagory.map((catItem) => {
         //Appending the Category Heading and Tech Item List
@@ -253,7 +252,6 @@ function generateQuestionAnswer(selectTech) {
 
 /*START: Populating Question Answer into DOM*/
 function populateQuestionAnswerDOM() {
-    // if (basicQuestionArr.length < questionCount) {
     if ((beginnerQuestion + advanceQuestion + expertQuestion) < questionCount) {
         return false;
     }
@@ -266,7 +264,22 @@ function populateQuestionAnswerDOM() {
     $('.option-list').html('');
     //Populating Options
     for (var i = 0; i < currentLevelQAArr[questionCount - 1].options.length; i++) {
-        $('.option-list').append('<li class="option-item"><pre><xmp>' + currentLevelQAArr[questionCount - 1].options[i] + '</xmp></pre></li>');
+        let answerTyp = currentLevelQAArr[questionCount - 1].answerTyp;
+        if (answerTyp == 'single-selection') {
+            $('.option-list').append('<li class="option-item" attr="' + answerTyp + '"><pre><xmp>' + currentLevelQAArr[questionCount - 1].options[i] + '</xmp></pre></li>');
+        } else {
+            let optionVal = currentLevelQAArr[questionCount - 1].options[i];
+            if (optionVal.toLowerCase() === 'above all') {
+                answerTyp = 'above-all';
+            } else if (optionVal.toLowerCase() === 'none of the above') {
+                answerTyp = 'none';
+            } else if (optionVal.toLowerCase() === 'select all') {
+                answerTyp = 'select-all';
+            } else {
+                answerTyp = 'multi-selection';
+            }
+            $('.option-list').append('<li class="option-item" attr="' + answerTyp + '"><pre><xmp>' + currentLevelQAArr[questionCount - 1].options[i] + '</xmp></pre></li>');
+        }
     }
 
     //Getting correct answer and answer details
@@ -282,7 +295,7 @@ function populateQuestionAnswerDOM() {
 
     $('.answer-desc-wrapper .answer-desc-block p').html(answerDetails);
     $('.current-question').html(questionCount);
-    checkActionBtn();//Animesh
+    checkActionBtn();
 
 }
 /*END: Populating Question Answer into DOM*/
@@ -305,29 +318,31 @@ function checkActionBtn() {
     });
     $('.test-screen-body .action-wrapper').find('.btn').addClass('disabled');
     if (questionCount == 1) {
-        // $('.test-screen-body .action-wrapper').find('.btn.prev-btn').addClass('disabled');
         if (isAnswerSelected && (isCorrectAnswerSelected || isWrongAnswerSelected)) {
-            $('.test-screen-body .action-wrapper').find('.btn:not(.prev-btn)').removeClass('disabled');
-        } else if(isAnswerSelected && !isCorrectAnswerSelected && !isWrongAnswerSelected){
-            $('.test-screen-body .action-wrapper').find('.btn.submit-btn)').removeClass('disabled');
+            $('.test-screen-body .action-wrapper').find('.next-btn').removeClass('disabled');
+            $('.test-screen-body .action-wrapper').find('.btn.submit-btn').addClass('clicked');
+        } else if (isAnswerSelected && !isCorrectAnswerSelected && !isWrongAnswerSelected) {
+            $('.test-screen-body .action-wrapper').find('.btn.submit-btn').removeClass('disabled clicked');
         }
-    } else if (questionCount > 1) {
-        // $('.test-screen-body .action-wrapper').find('.btn').removeClass('disabled');
+    } else if (questionCount > 1 && questionCount < (beginnerQuestion + advanceQuestion + expertQuestion)) {
         if (isAnswerSelected && (isCorrectAnswerSelected || isWrongAnswerSelected)) {
-            $('.test-screen-body .action-wrapper').find('.btn').removeClass('disabled');
-        } else if(isAnswerSelected && !isCorrectAnswerSelected && !isWrongAnswerSelected){
-            $('.test-screen-body .action-wrapper').find('.btn:not(.nxt-btn)').removeClass('disabled');
+            $('.test-screen-body .action-wrapper').find('.btn:not(.submit-btn)').removeClass('disabled');
+            $('.test-screen-body .action-wrapper').find('.btn.submit-btn').addClass('clicked');
+        } else if (isAnswerSelected && !isCorrectAnswerSelected && !isWrongAnswerSelected) {
+            $('.test-screen-body .action-wrapper').find('.btn:not(.nxt-btn)').removeClass('disabled clicked');
         } else {
             $('.test-screen-body .action-wrapper').find('.btn.prev-btn').removeClass('disabled');
+            $('.test-screen-body .action-wrapper').find('.btn.submit-btn').removeClass('clicked');
         }
     } else if (questionCount == (beginnerQuestion + advanceQuestion + expertQuestion)) {
-        // $('.test-screen-body .action-wrapper').find('.btn.nxt-btn').addClass('disabled');
         if (isAnswerSelected && (isCorrectAnswerSelected || isWrongAnswerSelected)) {
-            $('.test-screen-body .action-wrapper').find('.btn:not(.nxt-btn)').removeClass('disabled');
-        } else if(isAnswerSelected && !isCorrectAnswerSelected && !isWrongAnswerSelected){
-            $('.test-screen-body .action-wrapper').find('.btn:not(.nxt-btn)').removeClass('disabled');
+            $('.test-screen-body .action-wrapper').find('.prev-btn').removeClass('disabled');
+            $('.test-screen-body .action-wrapper').find('.btn.submit-btn').addClass('clicked');
+        } else if (isAnswerSelected && !isCorrectAnswerSelected && !isWrongAnswerSelected) {
+            $('.test-screen-body .action-wrapper').find('.btn:not(.nxt-btn)').removeClass('disabled clicked');
         } else {
             $('.test-screen-body .action-wrapper').find('.btn.prev-btn').removeClass('disabled');
+            $('.test-screen-body .action-wrapper').find('.btn.submit-btn').removeClass('clicked');
         }
     } else {
         $('.test-screen-body .action-wrapper').find('.btn.prev-btn').addClass('disabled');
@@ -338,10 +353,10 @@ function checkActionBtn() {
 /*START: Submit Answer*/
 function submitQuestion() {
     var ele, selectedAnswer;
-    $(document).on('click', '.test-screen-body .submit-btn', function () {
+    $(document).on('click', '.test-screen-body .submit-btn:not(.disabled)', function () {
         var tempArr = [];
         ele = $(this);
-        ele.addClass('clicked');
+        ele.addClass('clicked disabled');
         if (questionCount > selectedAnswers.length) {
             ele.closest('.test-screen-body').find('.option-item.selected').each(function () {
                 selectedAnswer = $(this).find('xmp').text();
@@ -355,16 +370,19 @@ function submitQuestion() {
         //Controlling disable/enable next/prev button according to question flow
         checkActionBtn();
         controllProgressList();
+        checkBadgeLevel();
     });
 }
 /*END: Submit Answer*/
 
 /*START: Checking Given Answer*/
 function checkAnswer() {
-    if (correctAnswer == 'Above All' && selectedAnswers.indexOf('Above All') != -1) {//Need to handle this section
-        $('.test-screen-body').find('.option-item.selected').each(function () {
-            $(this).addClass('correct');
-        });
+    if (correctAnswer[0] == 'Above All' && selectedAnswers[questionCount - 1].indexOf('Above All') != -1) {
+        $('.option-item[attr="above-all"]').prevAll().addClass('selected correct');
+        $('.option-item[attr="above-all"]').addClass('selected correct');
+    } else if (correctAnswer[0] == 'Select All' && selectedAnswers[questionCount - 1].indexOf('Select All') != -1) {
+        $('.option-item[attr="select-all"]').prevAll().addClass('selected correct');
+        $('.option-item[attr="select-all"]').addClass('selected correct');
     } else {
         $('.option-list .option-item').each(function (i) {
             var selecedItem = $(this).find('xmp').html();
@@ -387,11 +405,9 @@ function checkAnswer() {
 /*SATRT: Next Question*/
 function nextQuestion() {
     $(document).on('click', '.test-screen-body .next-btn:not(.disabled)', function () {
-        $('.submit-btn').removeClass('clicked');
         questionCount++;
         if (questionCount <= (beginnerQuestion + advanceQuestion + expertQuestion)) {
             populateQuestionAnswerDOM();
-            // checkActionBtn();
             if (questionCount <= selectedAnswers.length) {
                 checkAnswer();
             }
@@ -406,12 +422,10 @@ function nextQuestion() {
 function prevQuestion() {
     $(document).on('click', '.test-screen-body .prev-btn:not(.disabled)', function () {
         $(this).addClass('disabled');
-        $('.submit-btn').removeClass('clicked');
         // if (questionCount <= basicQuestionArr.length) {
         if (questionCount <= (beginnerQuestion + advanceQuestion + expertQuestion)) {
             questionCount--;
             populateQuestionAnswerDOM();
-            // checkActionBtn();
             $('.option-item').each(function () {
                 var text = $(this).find('xmp').text();
                 for (var i = 0; i < selectedAnswers[questionCount - 1].length; i++) {
@@ -432,12 +446,26 @@ function controllProgressList() {
     if (questionCount <= beginnerQuestion) {
         $('.progress-item:first-child .range').css('width', 'calc((100%/' + beginnerQuestion + ')*' + questionCount + ')');
     } else if (questionCount > beginnerQuestion && questionCount <= (beginnerQuestion + advanceQuestion)) {
-        $('.progress-item:nth-child(2) .range').css('width', 'calc((100%/' + advanceQuestion + ')*' + questionCount + ')');
+        $('.progress-item:nth-child(2) .range').css('width', 'calc((100%/' + advanceQuestion + ')*' + (questionCount - advanceQuestion) + ')');
     } else {
-        $('.progress-item:last-child .range').css('width', 'calc((100%/' + expertQuestion + ')*' + questionCount + ')');
+        $('.progress-item:last-child .range').css('width', 'calc((100%/' + expertQuestion + ')*' + (questionCount - advanceQuestion - expertQuestion) + ')');
     }
 }
 /*END: Controll Progress List*/
+
+/*START: Checking Badge Level*/
+function checkBadgeLevel() {
+    if (questionCount == beginnerQuestion) {
+        $('.test-screen-footer .badge-item:first-child').addClass('active');
+    } else if (questionCount == (beginnerQuestion + advanceQuestion)) {
+        $('.test-screen-footer .badge-item:nt-child(2)').addClass('active');
+    } else if (questionCount == (beginnerQuestion + advanceQuestion + expertQuestion)) {
+        $('.test-screen-footer .badge-item:last-child').addClass('active');
+    }
+
+}
+/*END: Checking Badge Level*/
+
 
 /*START: Show Answer Description*/
 function showAnsDesc() {
@@ -537,31 +565,61 @@ function chooseAnswer() {
     var ele;
     $(document).on('click', '.option-item', function () {
         ele = $(this);
-        ele.closest('.test-screen-body').find('.submit-btn').removeClass('disabled');
         //Once submit button is clicked option cann't be changed
         if ($('.submit-btn').hasClass('clicked')) {
             return false;
         }
-        //Select All
-        if (ele.attr('attr') == "sa") {
-            ele.closest('.option-list').find('.option-item').each(function () {
-                $(this).addClass('selected');
-            })
-        } else if (ele.attr('attr') == "al") { //Above All
-            ele.closest('.option-list').find('.option-item:not(:last-child)').each(function () {
-                $(this).addClass('selected');
-            });
-        } else if (ele.attr('attr') == "na") { //None of All
-            ele.closest('.option-list').find('.option-item').each(function () {
-                $(this).removeClass('selected');
-            });
+        ele.closest('.test-screen-body').find('.submit-btn').removeClass('disabled');
+        if (ele.attr('attr') == "select-all") {// Select All
+            if (ele.hasClass('selected')) {
+                ele.prevAll().removeClass('selected');
+                ele.removeClass('selected');
+            } else {
+                ele.prevAll().addClass('selected');
+                ele.addClass('selected');
+            }
+        } else if (ele.attr('attr') == "above-all") { //Above All
+            if ($('.option-item[attr="none"]').hasClass('selected')) {
+                $('.option-item[attr="none"]').removeClass('selected');
+            }
+            if (ele.hasClass('selected')) {
+                ele.prevAll().removeClass('selected');
+            } else {
+                ele.prevAll().addClass('selected');
+            }
             ele.toggleClass('selected');
+        } else if (ele.attr('attr') == "none") { //None of the above
+            ele.prevAll().removeClass('selected');
+            ele.toggleClass('selected');
+        } else if (ele.attr('attr') == "single-selection") {
+            $('.option-list').find('.option-item.selected').removeClass('selected');
+            $(this).addClass('selected');
         } else { //Custom
             ele.toggleClass('selected');
-            if ($('.option-list').find('.option-item:last-child').attr('attr') === 'na') {
-                $('.option-list').find('.option-item:last-child').removeClass('selected');
-            }
-            if (!$('.option-list').find('.option-item.selected').length) {
+            let totalOption = $('.option-list .option-item').length;
+            $('.option-list .option-item').each(function () {
+                if ($(this).attr('attr') === 'select-all') {
+                    let totalSelectedOption = $('.option-list .option-item.selected').length;
+                    if ($(this).hasClass('selected')) {
+                        $(this).removeClass('selected');
+                    } else if ((totalOption - totalSelectedOption) === 1) {
+                        $('.option-item[attr="select-all"]').addClass('selected');
+                    }
+                } else if ($(this).attr('attr') === 'above-all') {
+                    if ($('.option-item[attr="none"]').hasClass('selected')) {
+                        $('.option-item[attr="none"]').removeClass('selected');
+                    }
+                    let totalSelectedOption = $('.option-list .option-item.selected').length;
+                    if ($(this).hasClass('selected')) {
+                        $(this).removeClass('selected');
+                    } else if (($(this).prevAll().length - totalSelectedOption) === 0) {
+                        $('.option-item[attr="above-all"]').addClass('selected');
+                    }
+                } else if ($(this).attr('attr') === 'none' && $(this).hasClass('selected')) {
+                    $(this).removeClass('selected');
+                }
+            });
+            if (!$('.option-list .option-item.selected').length) {
                 $('.submit-btn').addClass('disabled');
             }
         }
