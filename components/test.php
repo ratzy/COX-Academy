@@ -16,10 +16,8 @@
             </div>
             <div class="action-wrapper">
                 <button class="btn secondary-btn prev-btn disabled"><i class="fa fa-angle-left"></i><em>Previous</em></button>
+                <button class="btn primary-btn submit-btn disabled"><em>Submit</em><i class="fa fa-angle-right"></i></button>
                 <button class="btn secondary-btn next-btn disabled"><i class="fa fa-angle-right"></i><em>Next</em></button>
-                <button class="btn primary-btn submit-btn disabled">
-                    <em>Submit</em><i class="fa fa-angle-right"></i></button>
-
             </div>
         </div>
         <div class="test-screen-footer">
@@ -50,7 +48,7 @@
 </div>
 
 <div class="answer-desc-wrapper">
-    <button class="btn btn-text" onclick="hideAnsDesc();">Close</button>
+    <button class="btn text-btn" onclick="hideAnsDesc();">Close</button>
     <div class="answer-block">
         <h3>Correct Answer</h3>
         <div class="answer">

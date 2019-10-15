@@ -21,11 +21,13 @@
     <?php include 'components/test.php';?>
     <!--END: Test-->
 
+    <!--START: Completion Modal-->
+    <?php include 'components/completion.php';?>
+    <!--END: Completion Modal-->
+
     <!--START: Footer-->
     <?php include 'components/footer.php';?>
     <!--END: Footer-->
-
-
 </body>
 
 </html>

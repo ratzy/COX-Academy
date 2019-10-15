@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!--END: Work Based Fonts-->
 
-    <link rel="stylesheet" type="text/css" href="assets/styles/reset.min.css" />
+    <link rel="stylesheet" href="assets/styles/reset.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/styles/base.css" />
 
 </head>
@@ -147,11 +147,9 @@
                     </ul>
                 </div>
                 <div class="action-wrapper">
-                    <button class="btn secondary-btn prev-btn disabled">Previous</button>
-                    <button class="btn secondary-btn next-btn disabled">Next</button>
-                    <button class="btn primary-btn submit-btn disabled">
-                        Submit<i class="fa fa-angle-right"></i></button>
-
+                    <button class="btn secondary-btn prev-btn disabled"><i class="fa fa-angle-left"></i><em>Previous</em></button>
+                    <button class="btn primary-btn submit-btn disabled"><em>Submit</em><i class="fa fa-angle-right"></i></button>
+                    <button class="btn secondary-btn next-btn disabled"><i class="fa fa-angle-right"></i><em>Next</em></button>
                 </div>
             </div>
             <div class="test-screen-footer">
@@ -182,7 +180,7 @@
     </div>
 
     <div class="answer-desc-wrapper">
-        <button class="btn btn-text" onclick="hideAnsDesc();">Close</button>
+        <button class="btn text-btn" onclick="hideAnsDesc();">Close</button>
         <div class="answer-block">
             <h3>Correct Answer</h3>
             <div class="answer">
@@ -195,6 +193,23 @@
         </div>
     </div>
     <!--END: Test-->
+
+    <!--START: Completion Modal-->
+    <div class="modal test-completion-modal">
+        <div class="modal-header">
+            <i class="fa fa-times" onclick="hideModal();"></i>
+        </div>
+        <div class="modal-body">
+            <img src="assets/images/completion-hero-img.png" alt="Completion Hero" class="completion-hero-img" />
+            <div class="modal-body-content">
+                <h3>Congrats <em class="name">Kamal</em> !</h3>
+                <p class="para">You have successfully completed <em class="tech-name">HTML5</em> test</p>
+                <span>Lets try some other skills too!</span>
+                <button type="button" class="btn text-btn go-back-dashboard-btn"><i class="fa fa-angle-left"></i><em>Go to Dashboard</em></button>
+            </div>
+        </div>
+    </div>
+    <!--END: Completion Modal-->
 
     <!--START: Footer-->
     <div class="bg-overlay"></div>
@@ -213,8 +228,6 @@
         <script type="text/javascript" src="scripts/base.js"></script>
     </footer>
     <!--END: Footer-->
-
-
 </body>
 
 </html>

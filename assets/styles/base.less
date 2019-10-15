@@ -176,7 +176,7 @@ b {
     letter-spacing: 0.1rem;
     color: @greyColor;
 
-    &:not(.btn-text):not(.disabled):hover {
+    &:not(.text-btn):not(.disabled):hover {
         background: @primaryColor;
         color: @whiteColor;
     }
@@ -190,7 +190,7 @@ b {
         cursor: not-allowed;
     }
 
-    &.btn-text {
+    &.text-btn {
         border: none;
         color: lighten(@blackColor, 30%);
 
@@ -351,6 +351,12 @@ header {
             &:hover {
                 background: darken(@whiteColor, 15%);
                 color: @blackColor;
+            }
+
+            &.disabled {
+                color: #929292;
+                cursor: not-allowed;
+                pointer-events: none;
             }
         }
     }
@@ -694,6 +700,26 @@ header {
     animation-name: loadFromRight;
 }
 
+.show-answer-btn {
+    .transition;
+    .pointed-cursor;
+    .small-font-size2;
+    position: absolute;
+    top: 7.5rem;
+    right: 1rem;
+    padding: .8rem;
+    letter-spacing: 0.02rem;
+    color: #737373;
+
+    em {
+        padding-right: .4rem;
+    }
+
+    &:hover {
+        color: @blackColor;
+    }
+}
+
 /*END: Test Seclection*/
 
 /*START: Test Screen*/
@@ -805,7 +831,6 @@ header {
         margin-top: 2rem;
 
         .btn {
-            margin-right: .5rem;
             font-size: .65rem;
 
             &:not(.submit-btn) i {
@@ -813,14 +838,14 @@ header {
             }
         }
 
-        .btn:first-child,
-        .btn:nth-child(2) {
+        .btn.prev-btn,
+        .btn.next-btn {
             width: calc(~"15% - .5rem");
         }
 
-        .btn:last-child {
+        .btn.submit-btn {
             width: 40%;
-            margin: 0;
+            margin: 0 .5rem;
         }
     }
 }
@@ -1075,6 +1100,67 @@ xmp {
 }
 
 /*END: Loader*/
+
+/*START: Test Completion Modal*/
+.test-completion-modal {
+    .modal-header {
+        .flex-wrapper;
+        justify-content: flex-end;
+    }
+
+    .modal-body {
+        .flex-wrapper;
+        justify-content: center;
+    }
+
+    .completion-hero-img {
+        .block-element;
+        position: absolute;
+        left: -1rem;
+        bottom: 0;
+        width: 50%;
+    }
+
+    .modal-body-content {
+        padding: 2rem 0;
+        width: calc(~"60% - 2.5rem");
+        margin-left: 53%;
+
+        h3 {
+            .medium-font-size2;
+            .medium-font-weight;
+            color: @blackColor;
+            margin-bottom: 1rem;
+        }
+
+        .para {
+            color: @greyColor;
+            margin-bottom: 1.25rem;
+            line-height: 1.2rem;
+
+            .tech-name {
+                color: @lightBlackColor;
+            }
+        }
+
+        span {
+            .block-element;
+            .small-font-size;
+            color: @lightBlackColor;
+        }
+
+        .go-back-dashboard-btn {
+            font-size: .75rem;
+            padding-left: 0;
+
+            i {
+                padding: 0 .5rem 0 0;
+            }
+        }
+    }
+}
+
+/*ENd: Test Completion Modal*/
 
 /*START: Animation*/
 .fade-in-anim {

@@ -20,6 +20,7 @@ $(document).ready(() => {
     submitQuestion();
     nextQuestion();
     prevQuestion();
+    gobacktoDashboard();
 });
 
 /*START: Input*/
@@ -180,7 +181,7 @@ function getQuestionSet() {
                 //                var decryptedResponse = decrypt(encryptedResponse);
                 //Popuate Technology Dashoard
                 populateTechDashBoard();
-            } else { }
+            } else {}
         },
         function (jqXHR, textStatus, errorThrown) {
             hideLoader();
@@ -244,24 +245,17 @@ function generateQuestionAnswer(selectTech) {
     $('.progress-item:nth-child(2) em').html('(' + advanceQuestionArr.length + ')');
     $('.progress-item:last-child em').html('(' + expertQuestionArr.length + ')');
 
-    populateQuestionAnswerDOM();
+    populateQuestionAnswerDOM(); //Populating QA DOM
+    disableProfileActivity(); //Disable Profile Activity
+
     //Populating Total Question Number
     $('.total-question').html('/ ' + parseInt(beginnerQuestion + advanceQuestion + expertQuestion));
+    //Reseting Question Dashboard at First Time
     resettingQuestionDashboard();
 }
 /*END: Fetching Question Answer*/
 
-/*START: Resetting question/answer dashboard before starting new*/
-function resettingQuestionDashboard(){
-    $('.test-screen-body .action-wrapper').find('.btn.submit-btn').removeClass('clicked');
-    $('.progress-item:first-child .range').css('width', '0%');
-    $('.progress-item:nth-child(2) .range').css('width', '0%');
-    $('.progress-item:last-child .range').css('width', '0%');
-    $('.test-screen-footer .badge-item:first-child').removeClass('active');
-    $('.test-screen-footer .badge-item:nth-child(2)').removeClass('active');
-    $('.test-screen-footer .badge-item:last-child').removeClass('active');
-}
-/*END: Resetting question/answer dashboard before starting new*/
+
 
 /*START: Populating Question Answer into DOM*/
 function populateQuestionAnswerDOM() {
@@ -329,6 +323,13 @@ function checkActionBtn() {
             isWrongAnswerSelected = true;
         }
     });
+    //Handeling the show and hide of the show answer button
+    if (isAnswerSelected == true) {
+        showAnswerBtn(); //Showing Show Answer Button
+    } else {
+        hideAnswerBtn(); //Hiding Show Answer Button
+    }
+
     $('.test-screen-body .action-wrapper').find('.btn').addClass('disabled');
     if (questionCount == 1) {
         if (isAnswerSelected && (isCorrectAnswerSelected || isWrongAnswerSelected)) {
@@ -357,6 +358,9 @@ function checkActionBtn() {
             $('.test-screen-body .action-wrapper').find('.btn.prev-btn').removeClass('disabled');
             $('.test-screen-body .action-wrapper').find('.btn.submit-btn').removeClass('clicked');
         }
+        setTimeout(function () {
+            checkTestCompletion(); //Checking last question to show the completion modal
+        }, 1000);
     } else {
         $('.test-screen-body .action-wrapper').find('.btn.prev-btn').addClass('disabled');
     }
@@ -427,9 +431,16 @@ function nextQuestion() {
         } else {
             questionCount--;
         }
+
     });
 }
 /*END: Next Question*/
+
+/*START: Check and show completion modal as per the current qustion number*/
+function checkTestCompletion() {
+    showModal('.test-completion-modal'); //Showing Completion Modal
+}
+/*END: Check and show completion modal as per the current qustion number*/
 
 /*START: Previous Question*/
 function prevQuestion() {
@@ -474,6 +485,7 @@ function checkBadgeLevel() {
         $('.test-screen-footer .badge-item:nth-child(2)').addClass('active');
     } else if (questionCount == (beginnerQuestion + advanceQuestion + expertQuestion)) {
         $('.test-screen-footer .badge-item:last-child').addClass('active');
+        activateProfileActivity(); //Activating Profile Activity
     }
 }
 /*END: Checking Badge Level*/
@@ -488,9 +500,21 @@ function showAnsDesc() {
 /*START: Hide Answer Description*/
 function hideAnsDesc() {
     $('.bg-overlay, .answer-desc-wrapper').removeClass('show');
-
+    showAnswerBtn(); //Showing Answer Button
 }
 /*END: Hide Answer Description*/
+
+/*START: Showing Answer Button*/
+function showAnswerBtn() {
+    $('.test-screen-body').append('<span class="show-answer-btn" onclick="showAnsDesc();"><em>View Answer</em><i class="fa fa-eye"></i></span>');
+}
+/*END: Showing Answer Button*/
+
+/*START: Hide Answer Button*/
+function hideAnswerBtn() {
+    $('.test-screen-body .show-answer-btn').remove();
+}
+/*END: Hide Answer Button*/
 
 /*START:  Manage Encryption*/
 function encrypt(data) {
@@ -582,7 +606,7 @@ function chooseAnswer() {
             return false;
         }
         ele.closest('.test-screen-body').find('.submit-btn').removeClass('disabled');
-        if (ele.attr('attr') == "select-all") {// Select All
+        if (ele.attr('attr') == "select-all") { // Select All
             if (ele.hasClass('selected')) {
                 ele.prevAll().removeClass('selected');
                 ele.removeClass('selected');
@@ -639,6 +663,22 @@ function chooseAnswer() {
 }
 /*END: Choose Answer form Options*/
 
+/*START: Disable Profile Activity*/
+function disableProfileActivity() {
+    $('.user-profile-activity .user-profile-item').each(function () {
+        $(this).addClass('disabled');
+    });
+}
+/*END: Disable Profile Activity*/
+
+/*START: Activate Profile Activity*/
+function activateProfileActivity() {
+    $('.user-profile-activity .user-profile-item').each(function () {
+        $(this).removeClass('disabled');
+    });
+}
+/*END: Activate Profile Activity*/
+
 /*START: Reset Variable*/
 function resetVariable() {
     formEmpty = true;
@@ -654,3 +694,24 @@ function resetVariable() {
     answerDetails = [];
 }
 /*END: Reset Variable*/
+
+/*START: Resetting question/answer dashboard before starting new*/
+function resettingQuestionDashboard() {
+    $('.test-screen-body .submit-btn').removeClass('clicked');
+    $('.progress-item .range').css('width', '0%');
+    $('.test-screen-footer .badge-item').removeClass('active');
+}
+/*END: Resetting question/answer dashboard before starting new*/
+
+/*START: Go Back to Dashboard*/
+function gobacktoDashboard() {
+    $(document).on('click', '.go-back-dashboard-btn', function () {
+        hideModal();
+        setTimeout(function () {
+            resetVariable();
+            resettingQuestionDashboard();
+            getQuestionSet();
+        }, 300);
+    });
+}
+/*END: Go Back to Dashboard*/
