@@ -39,7 +39,7 @@
               "answers": [
                 "Select All"
               ],
-              "answerDetails": " 'footer' tag represents the footer of a section.",
+              "answerDetails": "'Select All' - All the tags are part of HTML5.",
               "questionType": "basic",
               "icon": "",
               "answerTyp": "multi-selection"
@@ -74,7 +74,7 @@
               "answers": [
                 "Select All"
               ],
-              "answerDetails": " HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
+              "answerDetails": " 'Select All' - All of these are input \nattributes.",
               "questionType": "basic",
               "icon": "",
               "answerTyp": "multi-selection"
@@ -639,7 +639,8 @@
               ],
               "answerDetails": " Yes! HTML5 is designed, as much as possible, to be backward compatible with existing web browsers.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 2345,
@@ -655,7 +656,8 @@
               ],
               "answerDetails": " 'footer' tag represents the footer of a section.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 3456,
@@ -671,7 +673,8 @@
               ],
               "answerDetails": " 'number' input control accepts only numerical value. The step attribute specifies the precision, defaulting to 1.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 4567,
@@ -687,7 +690,8 @@
               ],
               "answerDetails": " HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 5678,
@@ -703,7 +707,8 @@
               ],
               "answerDetails": " The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "multi-selection"
             },
             {
               "questionId": 6789,
@@ -719,7 +724,8 @@
               ],
               "answerDetails": " Both of the above options are correct.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "multi-selection"
             },
             {
               "questionId": 7891,
@@ -735,7 +741,8 @@
               ],
               "answerDetails": " spellcheck − Specifies if the element must have it's spelling or grammar checked.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 8912,
@@ -751,7 +758,8 @@
               ],
               "answerDetails": " oncontextmenu − Triggers event when a context menu is triggered.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9123,
@@ -767,7 +775,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9124,
@@ -783,7 +792,8 @@
               ],
               "answerDetails": " onloadedmetadata − Triggers event when the duration and other media data of a media element is loaded.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9125,
@@ -799,7 +809,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9126,
@@ -815,7 +826,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             }
           ]
         },
@@ -836,7 +848,8 @@
               ],
               "answerDetails": " Yes! HTML5 is designed, as much as possible, to be backward compatible with existing web browsers.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 2345,
@@ -852,7 +865,8 @@
               ],
               "answerDetails": " 'footer' tag represents the footer of a section.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 3456,
@@ -868,7 +882,8 @@
               ],
               "answerDetails": " 'number' input control accepts only numerical value. The step attribute specifies the precision, defaulting to 1.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 4567,
@@ -884,7 +899,8 @@
               ],
               "answerDetails": " HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 5678,
@@ -900,7 +916,8 @@
               ],
               "answerDetails": " The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "multi-selection"
             },
             {
               "questionId": 6789,
@@ -916,7 +933,8 @@
               ],
               "answerDetails": " Both of the above options are correct.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "multi-selection"
             },
             {
               "questionId": 7891,
@@ -932,7 +950,8 @@
               ],
               "answerDetails": " spellcheck − Specifies if the element must have it's spelling or grammar checked.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 8912,
@@ -948,7 +967,8 @@
               ],
               "answerDetails": " oncontextmenu − Triggers event when a context menu is triggered.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9123,
@@ -964,7 +984,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9124,
@@ -980,7 +1001,8 @@
               ],
               "answerDetails": " onloadedmetadata − Triggers event when the duration and other media data of a media element is loaded.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9125,
@@ -996,7 +1018,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9126,
@@ -1012,7 +1035,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             }
           ]
         },
@@ -1033,7 +1057,8 @@
               ],
               "answerDetails": " Yes! HTML5 is designed, as much as possible, to be backward compatible with existing web browsers.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 2345,
@@ -1049,7 +1074,8 @@
               ],
               "answerDetails": " 'footer' tag represents the footer of a section.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 3456,
@@ -1065,7 +1091,8 @@
               ],
               "answerDetails": " 'number' input control accepts only numerical value. The step attribute specifies the precision, defaulting to 1.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 4567,
@@ -1081,7 +1108,8 @@
               ],
               "answerDetails": " HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 5678,
@@ -1097,7 +1125,8 @@
               ],
               "answerDetails": " The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "multi-selection"
             },
             {
               "questionId": 6789,
@@ -1113,7 +1142,8 @@
               ],
               "answerDetails": " Both of the above options are correct.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "multi-selection"
             },
             {
               "questionId": 7891,
@@ -1129,7 +1159,8 @@
               ],
               "answerDetails": " spellcheck − Specifies if the element must have it's spelling or grammar checked.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 8912,
@@ -1145,7 +1176,8 @@
               ],
               "answerDetails": " oncontextmenu − Triggers event when a context menu is triggered.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9123,
@@ -1161,7 +1193,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9124,
@@ -1177,7 +1210,8 @@
               ],
               "answerDetails": " onloadedmetadata − Triggers event when the duration and other media data of a media element is loaded.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9125,
@@ -1193,7 +1227,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9126,
@@ -1209,7 +1244,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             }
           ]
         }
@@ -1232,7 +1268,8 @@
               ],
               "answerDetails": " Yes! HTML5 is designed, as much as possible, to be backward compatible with existing web browsers.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 2345,
@@ -1248,7 +1285,8 @@
               ],
               "answerDetails": " 'footer' tag represents the footer of a section.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 3456,
@@ -1264,7 +1302,8 @@
               ],
               "answerDetails": " 'number' input control accepts only numerical value. The step attribute specifies the precision, defaulting to 1.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 4567,
@@ -1280,7 +1319,8 @@
               ],
               "answerDetails": " HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 5678,
@@ -1296,7 +1336,8 @@
               ],
               "answerDetails": " The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "multi-selection"
             },
             {
               "questionId": 6789,
@@ -1312,7 +1353,8 @@
               ],
               "answerDetails": " Both of the above options are correct.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "multi-selection"
             },
             {
               "questionId": 7891,
@@ -1328,7 +1370,8 @@
               ],
               "answerDetails": " spellcheck − Specifies if the element must have it's spelling or grammar checked.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 8912,
@@ -1344,7 +1387,8 @@
               ],
               "answerDetails": " oncontextmenu − Triggers event when a context menu is triggered.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9123,
@@ -1360,7 +1404,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9124,
@@ -1376,7 +1421,8 @@
               ],
               "answerDetails": " onloadedmetadata − Triggers event when the duration and other media data of a media element is loaded.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9125,
@@ -1392,7 +1438,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9126,
@@ -1408,7 +1455,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             }
           ]
         },
@@ -1429,7 +1477,8 @@
               ],
               "answerDetails": " Yes! HTML5 is designed, as much as possible, to be backward compatible with existing web browsers.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 2345,
@@ -1445,7 +1494,8 @@
               ],
               "answerDetails": " 'footer' tag represents the footer of a section.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 3456,
@@ -1461,7 +1511,8 @@
               ],
               "answerDetails": " 'number' input control accepts only numerical value. The step attribute specifies the precision, defaulting to 1.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 4567,
@@ -1477,7 +1528,8 @@
               ],
               "answerDetails": " HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 5678,
@@ -1493,7 +1545,8 @@
               ],
               "answerDetails": " The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "multi-selection"
             },
             {
               "questionId": 6789,
@@ -1509,7 +1562,8 @@
               ],
               "answerDetails": " Both of the above options are correct.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "multi-selection"
             },
             {
               "questionId": 7891,
@@ -1525,7 +1579,8 @@
               ],
               "answerDetails": " spellcheck − Specifies if the element must have it's spelling or grammar checked.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 8912,
@@ -1541,7 +1596,8 @@
               ],
               "answerDetails": " oncontextmenu − Triggers event when a context menu is triggered.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9123,
@@ -1557,7 +1613,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9124,
@@ -1573,7 +1630,8 @@
               ],
               "answerDetails": " onloadedmetadata − Triggers event when the duration and other media data of a media element is loaded.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9125,
@@ -1589,7 +1647,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9126,
@@ -1605,7 +1664,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             }
           ]
         },
@@ -1626,7 +1686,8 @@
               ],
               "answerDetails": " Yes! HTML5 is designed, as much as possible, to be backward compatible with existing web browsers.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 2345,
@@ -1642,7 +1703,8 @@
               ],
               "answerDetails": " 'footer' tag represents the footer of a section.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 3456,
@@ -1658,7 +1720,8 @@
               ],
               "answerDetails": " 'number' input control accepts only numerical value. The step attribute specifies the precision, defaulting to 1.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 4567,
@@ -1674,7 +1737,8 @@
               ],
               "answerDetails": " HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 5678,
@@ -1690,7 +1754,8 @@
               ],
               "answerDetails": " The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "multi-selection"
             },
             {
               "questionId": 6789,
@@ -1706,7 +1771,8 @@
               ],
               "answerDetails": " Both of the above options are correct.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "multi-selection"
             },
             {
               "questionId": 7891,
@@ -1722,7 +1788,8 @@
               ],
               "answerDetails": " spellcheck − Specifies if the element must have it's spelling or grammar checked.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 8912,
@@ -1738,7 +1805,8 @@
               ],
               "answerDetails": " oncontextmenu − Triggers event when a context menu is triggered.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9123,
@@ -1754,7 +1822,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9124,
@@ -1770,7 +1839,8 @@
               ],
               "answerDetails": " onloadedmetadata − Triggers event when the duration and other media data of a media element is loaded.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9125,
@@ -1786,7 +1856,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9126,
@@ -1802,7 +1873,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             }
           ]
         }
@@ -1825,7 +1897,8 @@
               ],
               "answerDetails": " Yes! HTML5 is designed, as much as possible, to be backward compatible with existing web browsers.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 2345,
@@ -1841,7 +1914,8 @@
               ],
               "answerDetails": " 'footer' tag represents the footer of a section.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 3456,
@@ -1857,7 +1931,8 @@
               ],
               "answerDetails": " 'number' input control accepts only numerical value. The step attribute specifies the precision, defaulting to 1.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 4567,
@@ -1873,7 +1948,8 @@
               ],
               "answerDetails": " HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 5678,
@@ -1889,7 +1965,8 @@
               ],
               "answerDetails": " The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "multi-selection"
             },
             {
               "questionId": 6789,
@@ -1905,7 +1982,8 @@
               ],
               "answerDetails": " Both of the above options are correct.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "multi-selection"
             },
             {
               "questionId": 7891,
@@ -1921,7 +1999,8 @@
               ],
               "answerDetails": " spellcheck − Specifies if the element must have it's spelling or grammar checked.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 8912,
@@ -1937,7 +2016,8 @@
               ],
               "answerDetails": " oncontextmenu − Triggers event when a context menu is triggered.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9123,
@@ -1953,7 +2033,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9124,
@@ -1969,7 +2050,8 @@
               ],
               "answerDetails": " onloadedmetadata − Triggers event when the duration and other media data of a media element is loaded.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9125,
@@ -1985,7 +2067,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9126,
@@ -2001,7 +2084,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             }
           ]
         },
@@ -2022,7 +2106,8 @@
               ],
               "answerDetails": " Yes! HTML5 is designed, as much as possible, to be backward compatible with existing web browsers.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 2345,
@@ -2038,7 +2123,8 @@
               ],
               "answerDetails": " 'footer' tag represents the footer of a section.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 3456,
@@ -2054,7 +2140,8 @@
               ],
               "answerDetails": " 'number' input control accepts only numerical value. The step attribute specifies the precision, defaulting to 1.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 4567,
@@ -2070,7 +2157,8 @@
               ],
               "answerDetails": " HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 5678,
@@ -2086,7 +2174,8 @@
               ],
               "answerDetails": " The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "multi-selection"
             },
             {
               "questionId": 6789,
@@ -2102,7 +2191,8 @@
               ],
               "answerDetails": " Both of the above options are correct.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "multi-selection"
             },
             {
               "questionId": 7891,
@@ -2118,7 +2208,8 @@
               ],
               "answerDetails": " spellcheck − Specifies if the element must have it's spelling or grammar checked.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 8912,
@@ -2134,7 +2225,8 @@
               ],
               "answerDetails": " oncontextmenu − Triggers event when a context menu is triggered.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9123,
@@ -2150,7 +2242,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9124,
@@ -2166,7 +2259,8 @@
               ],
               "answerDetails": " onloadedmetadata − Triggers event when the duration and other media data of a media element is loaded.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9125,
@@ -2182,7 +2276,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9126,
@@ -2198,7 +2293,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             }
           ]
         },
@@ -2219,7 +2315,8 @@
               ],
               "answerDetails": " Yes! HTML5 is designed, as much as possible, to be backward compatible with existing web browsers.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 2345,
@@ -2235,7 +2332,8 @@
               ],
               "answerDetails": " 'footer' tag represents the footer of a section.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 3456,
@@ -2251,7 +2349,8 @@
               ],
               "answerDetails": " 'number' input control accepts only numerical value. The step attribute specifies the precision, defaulting to 1.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 4567,
@@ -2267,7 +2366,8 @@
               ],
               "answerDetails": " HTML5 introduced a new attribute called required which would insist to have a value in an input control.",
               "questionType": "basic",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 5678,
@@ -2283,7 +2383,8 @@
               ],
               "answerDetails": " The Session Storage Data would be deleted by the browsers immediately after the session gets terminated.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "multi-selection"
             },
             {
               "questionId": 6789,
@@ -2299,7 +2400,8 @@
               ],
               "answerDetails": " Both of the above options are correct.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "multi-selection"
             },
             {
               "questionId": 7891,
@@ -2315,7 +2417,8 @@
               ],
               "answerDetails": " spellcheck − Specifies if the element must have it's spelling or grammar checked.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 8912,
@@ -2331,7 +2434,8 @@
               ],
               "answerDetails": " oncontextmenu − Triggers event when a context menu is triggered.",
               "questionType": "advance",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9123,
@@ -2347,7 +2451,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9124,
@@ -2363,7 +2468,8 @@
               ],
               "answerDetails": " onloadedmetadata − Triggers event when the duration and other media data of a media element is loaded.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9125,
@@ -2379,7 +2485,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             },
             {
               "questionId": 9126,
@@ -2395,7 +2502,8 @@
               ],
               "answerDetails": " ondrop − Triggers event when dragged element is being dropped.",
               "questionType": "expert",
-              "icon": ""
+              "icon": "",
+              "answerTyp": "single-selection"
             }
           ]
         }
