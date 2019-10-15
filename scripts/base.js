@@ -138,10 +138,10 @@ function logIn() {
 /*END: Login*/
 
 /*STRAT: Generate Random Array*/
-function generateRandArr(limit) {
+function generateRandArr(limit, actualArrLength) {
     let randArr = [];
     for (let i = 1; i <= limit; i++) {
-        let temp = Math.floor(Math.random() * limit);
+        let temp = Math.floor(Math.random() * actualArrLength);
         if (randArr.indexOf(temp) === -1) {
             randArr.push(temp);
         } else {
@@ -221,21 +221,21 @@ function generateQuestionAnswer(selectTech) {
     basicQuestionArr = returnData.CoxAcademyQuestions.questionSet[selectedCat][selectTech].questionList.filter((item) => {
         return item.questionType === 'basic';
     });
-    let beginnerRandArr = generateRandArr(beginnerQuestion);
+    let beginnerRandArr = generateRandArr(beginnerQuestion, basicQuestionArr.length);
     basicQuestionArr = basicQuestionArr.filter((item, index) => {
         return beginnerRandArr.indexOf(index) !== -1
     });
     advanceQuestionArr = returnData.CoxAcademyQuestions.questionSet[selectedCat][selectTech].questionList.filter((item) => {
         return item.questionType === 'advance';
     });
-    let advanceRandArr = generateRandArr(advanceQuestion);
+    let advanceRandArr = generateRandArr(advanceQuestion, advanceQuestionArr.length);
     advanceQuestionArr = advanceQuestionArr.filter((item, index) => {
         return advanceRandArr.indexOf(index) !== -1
     });
     expertQuestionArr = returnData.CoxAcademyQuestions.questionSet[selectedCat][selectTech].questionList.filter((item) => {
         return item.questionType === 'expert';
     });
-    let expertRandArr = generateRandArr(expertQuestion);
+    let expertRandArr = generateRandArr(expertQuestion, expertQuestionArr.length);
     expertQuestionArr = expertQuestionArr.filter((item, index) => {
         return expertRandArr.indexOf(index) !== -1
     });
@@ -247,8 +247,21 @@ function generateQuestionAnswer(selectTech) {
     populateQuestionAnswerDOM();
     //Populating Total Question Number
     $('.total-question').html('/ ' + parseInt(beginnerQuestion + advanceQuestion + expertQuestion));
+    resettingQuestionDashboard();
 }
 /*END: Fetching Question Answer*/
+
+/*START: Resetting question/answer dashboard before starting new*/
+function resettingQuestionDashboard(){
+    $('.test-screen-body .action-wrapper').find('.btn.submit-btn').removeClass('clicked');
+    $('.progress-item:first-child .range').css('width', '0%');
+    $('.progress-item:nth-child(2) .range').css('width', '0%');
+    $('.progress-item:last-child .range').css('width', '0%');
+    $('.test-screen-footer .badge-item:first-child').removeClass('active');
+    $('.test-screen-footer .badge-item:nth-child(2)').removeClass('active');
+    $('.test-screen-footer .badge-item:last-child').removeClass('active');
+}
+/*END: Resetting question/answer dashboard before starting new*/
 
 /*START: Populating Question Answer into DOM*/
 function populateQuestionAnswerDOM() {
@@ -462,7 +475,6 @@ function checkBadgeLevel() {
     } else if (questionCount == (beginnerQuestion + advanceQuestion + expertQuestion)) {
         $('.test-screen-footer .badge-item:last-child').addClass('active');
     }
-
 }
 /*END: Checking Badge Level*/
 
