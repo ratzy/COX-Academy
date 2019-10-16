@@ -181,7 +181,7 @@ function getQuestionSet() {
                 //                var decryptedResponse = decrypt(encryptedResponse);
                 //Popuate Technology Dashoard
                 populateTechDashBoard();
-            } else {}
+            } else { }
         },
         function (jqXHR, textStatus, errorThrown) {
             hideLoader();
@@ -308,7 +308,7 @@ function populateQuestionAnswerDOM() {
 /*END: Populating Question Answer into DOM*/
 
 /*START: Activating action button on question count condition*/
-function checkActionBtn() {
+function checkActionBtn(actionType) {
     let isAnswerSelected = false;
     let isCorrectAnswerSelected = false;
     let isWrongAnswerSelected = false;
@@ -352,15 +352,15 @@ function checkActionBtn() {
         if (isAnswerSelected && (isCorrectAnswerSelected || isWrongAnswerSelected)) {
             $('.test-screen-body .action-wrapper').find('.prev-btn').removeClass('disabled');
             $('.test-screen-body .action-wrapper').find('.btn.submit-btn').addClass('clicked');
+            if (actionType && actionType !== 'on-submit') {
+                checkTestCompletion(); //Checking last question to show the completion modal
+            }
         } else if (isAnswerSelected && !isCorrectAnswerSelected && !isWrongAnswerSelected) {
             $('.test-screen-body .action-wrapper').find('.btn:not(.nxt-btn)').removeClass('disabled clicked');
         } else {
             $('.test-screen-body .action-wrapper').find('.btn.prev-btn').removeClass('disabled');
             $('.test-screen-body .action-wrapper').find('.btn.submit-btn').removeClass('clicked');
         }
-        setTimeout(function () {
-            checkTestCompletion(); //Checking last question to show the completion modal
-        }, 1000);
     } else {
         $('.test-screen-body .action-wrapper').find('.btn.prev-btn').addClass('disabled');
     }
@@ -382,10 +382,8 @@ function submitQuestion() {
             selectedAnswers.push(tempArr);
         }
         //Checking the answer if correct or wrong
-        checkAnswer();
+        checkAnswer('on-submit');
         showAnsDesc();
-        //Controlling disable/enable next/prev button according to question flow
-        checkActionBtn();
         controllProgressList();
         checkBadgeLevel();
     });
@@ -393,7 +391,7 @@ function submitQuestion() {
 /*END: Submit Answer*/
 
 /*START: Checking Given Answer*/
-function checkAnswer() {
+function checkAnswer(actionType) {
     if (correctAnswer[0] == 'Above All' && selectedAnswers[questionCount - 1].indexOf('Above All') != -1) {
         $('.option-item[attr="above-all"]').prevAll().addClass('selected correct');
         $('.option-item[attr="above-all"]').addClass('selected correct');
@@ -415,7 +413,7 @@ function checkAnswer() {
             }
         });
     }
-    checkActionBtn();
+    checkActionBtn(actionType);
 }
 /*END: Checking Given Answer*/
 
@@ -446,7 +444,6 @@ function checkTestCompletion() {
 function prevQuestion() {
     $(document).on('click', '.test-screen-body .prev-btn:not(.disabled)', function () {
         $(this).addClass('disabled');
-        // if (questionCount <= basicQuestionArr.length) {
         if (questionCount <= (beginnerQuestion + advanceQuestion + expertQuestion)) {
             questionCount--;
             populateQuestionAnswerDOM();
@@ -501,6 +498,9 @@ function showAnsDesc() {
 function hideAnsDesc() {
     $('.bg-overlay, .answer-desc-wrapper').removeClass('show');
     showAnswerBtn(); //Showing Answer Button
+    if (questionCount == (beginnerQuestion + advanceQuestion + expertQuestion)) {
+        checkTestCompletion(); //Checking last question to show the completion modal
+    }
 }
 /*END: Hide Answer Description*/
 
@@ -707,10 +707,13 @@ function resettingQuestionDashboard() {
 function gobacktoDashboard() {
     $(document).on('click', '.go-back-dashboard-btn', function () {
         hideModal();
+        $('.bg-overlay, .answer-desc-wrapper').removeClass('show');
+        $('.test-screen').removeClass('show');
+        $('.test-selection-wrapper').addClass('show');
         setTimeout(function () {
             resetVariable();
             resettingQuestionDashboard();
-            getQuestionSet();
+            populateTechDashBoard();
         }, 300);
     });
 }
